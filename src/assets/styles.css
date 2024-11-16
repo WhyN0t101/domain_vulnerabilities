@@ -1,69 +1,83 @@
-/* Basic styling for the domain list container */
-.domain-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;  /* Center items horizontally */
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;  /* Maximum width of the list */
-  margin: 0 auto;  /* Center the domain list on the page */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom styles using @layer to properly integrate with Tailwind */
+@layer components {
+  .domain-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  .domain-card {
+    background-color: rgb(243 244 246);
+    border: 1px solid rgb(209 213 219);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition-property: transform;
+    transition-duration: 300ms;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    width: 100%;
+    max-width: 24rem;
+  }
+
+  .domain-card:hover {
+    --tw-scale-x: 1.05;
+    --tw-scale-y: 1.05;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    background-color: rgb(229 231 235);
+  }
+
+  button {
+    background-color: rgb(34 197 94);
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1.25rem;
+    transition-property: color, background-color, border-color;
+    transition-duration: 300ms;
+    border: 0;
+  }
+
+  button:hover {
+    background-color: rgb(22 163 74);
+  }
 }
 
-/* Domain card styling */
-.domain-card {
-  background: #f5f5f5;
-  border: 1px solid #ccc;
-  padding: 25px 40px;  /* Increase padding for larger cards */
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s;
-  text-align: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 350px;  /* Increase card size */
-}
-
-.domain-card:hover {
-  transform: scale(1.05);
-  background-color: #e1e1e1;
-}
-
-/* Button inside the card */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 15px 32px;
-  font-size: 18px;  /* Increase button size */
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-/* Media Query: For larger screens, split the domain list into rows of four items */
+/* Media queries */
 @media (min-width: 1024px) {
   .domain-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* 4 columns per row */
-    gap: 20px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
   }
 }
 
-/* Media Query: For medium screens (tablets), use 2 columns */
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .domain-list {
-    grid-template-columns: repeat(2, 1fr);  /* 2 columns per row */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
   }
 }
 
-/* For smaller screens (mobiles), use a single column */
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .domain-list {
-    grid-template-columns: 1fr;  /* 1 column per row */
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.25rem;
   }
 }

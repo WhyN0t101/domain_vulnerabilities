@@ -8,18 +8,19 @@
       />
     </div>
 
-    <router-view :domains="filteredDomains" @select-domain="selectDomain" />
+    <!-- Pass filtered domains to the DomainList component -->
+    <router-view :domains="filteredDomains" />
   </div>
 </template>
 
 <script>
-import domainData from './domain.json';
+import domainData from './domain_name.json';
 
 export default {
   name: 'App',
   data() {
     return {
-      domains: domainData,
+      domains: domainData, // List of domains from the JSON file or API
       searchQuery: '',
     };
   },
@@ -32,6 +33,7 @@ export default {
   },
 };
 </script>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');

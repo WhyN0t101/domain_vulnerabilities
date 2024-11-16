@@ -1,5 +1,3 @@
-
-
 import { createRouter, createWebHistory } from 'vue-router';
 import DomainList from '../components/DomainList.vue';
 import DomainDetails from '../components/DomainDetails.vue';
@@ -15,11 +13,7 @@ const routes = [
     path: '/details/:domainName',
     name: 'Details',
     component: DomainDetails,
-    props: route => ({
-      domainData: domainData.find(
-        domain => domain.domain === route.params.domainName
-      ),
-    }),
+    props: { domainData }, // Pass domainData directly as a prop
   },
 ];
 
