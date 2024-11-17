@@ -1,26 +1,23 @@
 <template>
   <div id="app">
-    <div class="search-bar">
-      <input 
-        type="text" 
-        v-model="searchQuery" 
-        placeholder="Search domains..."
-      />
-    </div>
-
     <!-- Pass filtered domains to the DomainList component -->
     <router-view :domains="filteredDomains" />
   </div>
 </template>
 
 <script>
-import domainData from './domain_name.json';
+import domainData from './centro.json';
 
 export default {
   name: 'App',
   data() {
     return {
-      domains: domainData, // List of domains from the JSON file or API
+      domains: Object.entries(domainData).map(([municipio, details]) => ({
+        domain: details.sitio,
+        municipio,
+        rua: details.rua,
+        codigopostal: details.codigopostal,
+      })), // Convert object to array of domain objects
       searchQuery: '',
     };
   },
@@ -33,7 +30,6 @@ export default {
   },
 };
 </script>
-
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');

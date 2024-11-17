@@ -3,20 +3,12 @@ import DomainList from '../components/DomainList.vue';
 import DomainDetails from '../components/DomainDetails.vue';
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: DomainList,
-  },
-  {
-    path: '/details/:domainName',
-    name: 'Details',
-    component: DomainDetails,
-  },
+  { path: '/', component: DomainList, name: 'Home' },
+  { path: '/details/:domain', component: DomainDetails, name: 'DomainDetails' },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(process.env.BASE_URL),
   routes,
 });
 

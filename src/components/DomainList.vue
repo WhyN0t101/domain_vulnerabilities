@@ -3,16 +3,12 @@
     <div class="max-w-7xl mx-auto">
       <!-- Header Section -->
       <div class="text-center mb-16 animate-fade-in">
-        <h1 class="text-5xl font-bold text-gray-900 mb-4 font-display">
-          Domain Directory
-        </h1>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Explore our comprehensive list of registered domains and their details
-        </p>
+        <h1 class="text-5xl font-bold text-gray-900 mb-4">Domain Directory</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore our comprehensive list of registered domains and their details.</p>
         <div class="h-1.5 w-32 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mt-6"></div>
       </div>
 
-      <!-- Search Bar -->
+      <!-- Search Bar Section -->
       <div class="max-w-2xl mx-auto mb-12">
         <div class="relative">
           <span class="absolute inset-y-0 left-0 pl-4 flex items-center">
@@ -30,15 +26,10 @@
       </div>
 
       <!-- Domain Grid -->
-      <div v-if="domains && domains.length" 
-           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        <div v-for="(domain, index) in domains" 
-             :key="domain.domain" 
-             class="transform transition-all duration-300 hover:scale-105 hover:-rotate-1"
-             :class="{'animate-fade-in-up': true}"
-             :style="{ animationDelay: `${index * 100}ms` }">
+      <div v-if="filteredDomains && filteredDomains.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div v-for="domain in filteredDomains" :key="domain.domain">
           <router-link :to="`/details/${domain.domain}`" class="block">
-            <div class="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
               <!-- Domain Card Header -->
               <div class="bg-gradient-to-r from-blue-500 to-indigo-600 p-6">
                 <div class="flex items-center justify-between">
@@ -51,7 +42,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <!-- Domain Card Body -->
               <div class="p-6 space-y-4">
                 <div class="flex items-start space-x-3">
@@ -60,8 +51,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   <div>
-                    <p class="text-sm font-medium text-gray-900">{{ domain.municipio }}</p>
-                    <p class="text-sm text-gray-600">{{ domain.rua }}</p>
+                    <p class="text-sm font-medium text-gray-900">{{ domain.municipio || 'N/A' }}</p>
+                    <p class="text-sm text-gray-600">{{ domain.rua || 'N/A' }}</p>
                   </div>
                 </div>
 
@@ -69,9 +60,9 @@
                   <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <p class="text-sm text-gray-600">{{ domain.codigopostal }}</p>
+                  <p class="text-sm text-gray-600">{{ domain.codigopostal || 'N/A' }}</p>
                 </div>
-                
+
                 <!-- Action Button -->
                 <button class="w-full mt-6 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 
                              text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 
@@ -88,15 +79,9 @@
       </div>
 
       <!-- Empty State -->
-      <div v-else class="text-center py-12 animate-fade-in">
-        <div class="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-8 max-w-md mx-auto border border-gray-100">
-          <svg class="w-20 h-20 text-gray-400 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <p class="text-xl text-gray-600">No domains available to display</p>
-          <p class="text-gray-500 mt-2">Try adjusting your search criteria</p>
-        </div>
+      <div v-else class="text-center py-12">
+        <p class="text-xl text-gray-600">No domains available to display</p>
+        <p class="text-gray-500 mt-2">Try adjusting your search criteria</p>
       </div>
     </div>
   </div>
@@ -113,13 +98,20 @@ export default {
   },
   data() {
     return {
-      searchQuery: ''
-    }
-  }
+      searchQuery: '', // Holds the search query input by the user
+    };
+  },
+  computed: {
+    filteredDomains() {
+      return this.domains.filter(domain =>
+        domain.domain.toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped>
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -129,22 +121,7 @@ export default {
   }
 }
 
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
-}
-
 .animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out forwards;
+  animation: fade-in 0.6s ease-out forwards;
 }
 </style>
