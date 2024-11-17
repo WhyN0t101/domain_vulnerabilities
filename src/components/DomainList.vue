@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto">
       <!-- Header Section -->
       <div class="text-center mb-16 animate-fade-in">
-        <h1 class="text-5xl font-bold text-gray-900 mb-4">Domain Directory</h1>
+        <h1 class="text-5xl font-bold text-gray-900 mb-4">Municipalities Domain Directory</h1>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore our comprehensive list of registered domains and their details.</p>
         <div class="h-1.5 w-32 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mt-6"></div>
       </div>
@@ -88,6 +88,8 @@
 </template>
 
 <script>
+// Script Section (keeping things as they are)
+
 export default {
   name: 'DomainList',
   props: {
@@ -112,6 +114,7 @@ export default {
 </script>
 
 <style scoped>
+/* Basic Animation */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -121,7 +124,16 @@ export default {
   }
 }
 
+/* Optimizing for layout stability */
 .animate-fade-in-up {
   animation: fade-in 0.6s ease-out forwards;
+}
+
+/* Preload external resources */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+/* Efficient CSS/JS */
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 </style>
