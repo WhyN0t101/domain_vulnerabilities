@@ -2,541 +2,1669 @@
     "Águeda": {
         "sitio": "cm-agueda.pt",
         "rua": "Praça do Município",
-        "codigopostal": "3754-500"
+        "codigopostal": "3754-500",
+        "localidade": "ÁGUEDA"
     },
     "Albergaria-a-velha": {
         "sitio": "cm-albergaria.pt",
         "rua": "Praça Ferreira Tavares",
-        "codigopostal": "3850-053"
+        "codigopostal": "3850-053",
+        "localidade": "ALBERGARIA-A-VELHA"
     },
     "Anadia": {
         "sitio": "cm-anadia.pt",
         "rua": "Praça do Município - Apartado 19",
-        "codigopostal": "3780-909"
+        "codigopostal": "3780-909",
+        "localidade": "ANADIA"
     },
     "Arouca": {
         "sitio": "cm-arouca.pt",
         "rua": "Praça do Município",
-        "codigopostal": "4540-001"
+        "codigopostal": "4540-001",
+        "localidade": "AROUCA"
     },
     "Aveiro": {
         "sitio": "cm-aveiro.pt",
         "rua": "Praça da República, Apartado 244",
-        "codigopostal": "3810-156"
+        "codigopostal": "3810-156",
+        "localidade": "AVEIRO"
     },
     "Castelo de Paiva": {
         "sitio": "cm-castelo-paiva.pt",
         "rua": "Largo do Conde Sobrado",
-        "codigopostal": "4550-102"
+        "codigopostal": "4550-102",
+        "localidade": "CASTELO DE PAIVA"
     },
     "Espinho": {
         "sitio": "cm-espinho.pt",
         "rua": "Praça Dr. José Salvador - Apartado 700",
-        "codigopostal": "4500-901"
+        "codigopostal": "4500-901",
+        "localidade": "ESPINHO"
     },
     "Estarreja": {
         "sitio": "cm-estarreja.pt",
         "rua": "Praça Francisco Barbosa",
-        "codigopostal": "3864-001"
+        "codigopostal": "3864-001",
+        "localidade": "ESTARREJA"
     },
     "Ílhavo": {
         "sitio": "cm-ilhavo.pt",
         "rua": "Avenida 25 de Abril",
-        "codigopostal": "3830-044"
+        "codigopostal": "3830-044",
+        "localidade": "ÍLHAVO"
     },
     "Mealhada": {
         "sitio": "cm-mealhada.pt",
         "rua": "Largo do Município",
-        "codigopostal": "3054-001"
+        "codigopostal": "3054-001",
+        "localidade": "MEALHADA"
     },
     "Murtosa": {
         "sitio": "cm-murtosa.pt",
         "rua": "Praça do Município - Acabada - Pardelhas",
-        "codigopostal": "3870-101"
+        "codigopostal": "3870-101",
+        "localidade": "MURTOSA"
     },
     "Oliveira de Azeméis": {
         "sitio": "cm-oaz.pt",
         "rua": "Rua da República",
-        "codigopostal": "3720-504"
+        "codigopostal": "3720-504",
+        "localidade": "OLIVEIRA DE AZEMÉIS"
     },
     "Oliveira do Bairro": {
         "sitio": "cm-olb.pt",
         "rua": "Praça do Município,  Ed. Paços do Concelho",
-        "codigopostal": "3770-851"
+        "codigopostal": "3770-851",
+        "localidade": "OLIVEIRA DO BAIRRO"
     },
     "Ovar": {
         "sitio": "cm-ovar.pt",
         "rua": "Praça da República",
-        "codigopostal": "3880-141"
+        "codigopostal": "3880-141",
+        "localidade": "OVAR"
     },
     "Santa Maria da Feira": {
         "sitio": "cm-feira.pt",
         "rua": "Praça da República, N.º 135",
-        "codigopostal": "4524-909"
+        "codigopostal": "4524-909",
+        "localidade": "SANTA MARIA DA FEIRA"
     },
     "São João da Madeira": {
         "sitio": "cm-sjm.pt",
         "rua": "Av. da Liberdade",
-        "codigopostal": "3700-956"
+        "codigopostal": "3700-956",
+        "localidade": "SÃO JOÃO DA MADEIRA"
     },
     "Sever do Vouga": {
         "sitio": "cm-sever.pt",
         "rua": "Largo do Município",
-        "codigopostal": "3740-262"
+        "codigopostal": "3740-262",
+        "localidade": "SEVER DO VOUGA"
     },
     "Vagos": {
         "sitio": "cm-vagos.pt",
         "rua": "Rua da Saudade",
-        "codigopostal": "3840-420"
+        "codigopostal": "3840-420",
+        "localidade": "VAGOS"
     },
     "Vale de Cambra": {
         "sitio": "cm-valedecambra.pt",
         "rua": "Edifício Municipal, Av. Camilo Tavares de Matos, N.º 19",
-        "codigopostal": "3730-901"
+        "codigopostal": "3730-901",
+        "localidade": "VALE DE CAMBRA"
+    },
+    "Aljustrel": {
+        "sitio": "mun-aljustrel.pt",
+        "rua": "Avenida 1º de Maio",
+        "codigopostal": "7600-010",
+        "localidade": "ALJUSTREL"
+    },
+    "Almodôvar": {
+        "sitio": "cm-almodovar.pt",
+        "rua": "Rua Serpa Pinto, N.º 10",
+        "codigopostal": "7700-081",
+        "localidade": "ALMODÔVAR"
+    },
+    "Alvito": {
+        "sitio": "cm-alvito.pt",
+        "rua": "Largo do Relógio, N.º 1",
+        "codigopostal": "7920-022",
+        "localidade": "ALVITO"
+    },
+    "Barrancos": {
+        "sitio": "cm-barrancos.pt",
+        "rua": "Praça do Município, N.º 2",
+        "codigopostal": "7230-030",
+        "localidade": "BARRANCOS"
+    },
+    "Beja": {
+        "sitio": "cm-beja.pt",
+        "rua": "Praça da República",
+        "codigopostal": "7800-427",
+        "localidade": "BEJA"
+    },
+    "Castro Verde": {
+        "sitio": "cm-castroverde.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "7780-217",
+        "localidade": "CASTRO VERDE"
+    },
+    "Cuba": {
+        "sitio": "cm-cuba.pt",
+        "rua": "Rua Serpa Pinto",
+        "codigopostal": "7940-172",
+        "localidade": "CUBA"
+    },
+    "Ferreira do Alentejo": {
+        "sitio": "ferreiradoalentejo.pt",
+        "rua": "Praça Comendador Infante Passanha, N.º 5",
+        "codigopostal": "7900-571",
+        "localidade": "FERREIRA DO ALENTEJO"
+    },
+    "Mértola": {
+        "sitio": "cm-mertola.pt",
+        "rua": "Praça Luís de Camões",
+        "codigopostal": "7750-329",
+        "localidade": "MÉRTOLA"
+    },
+    "Moura": {
+        "sitio": "cm-moura.pt",
+        "rua": "Praça Sacadura Cabral",
+        "codigopostal": "7860-207",
+        "localidade": "MOURA"
+    },
+    "Odemira": {
+        "sitio": "cm-odemira.pt",
+        "rua": "Praça da República",
+        "codigopostal": "7630-139",
+        "localidade": "ODEMIRA"
+    },
+    "Ourique": {
+        "sitio": "cm-ourique.pt",
+        "rua": "Avenida 25 de Abril, N.º 26",
+        "codigopostal": "7670-250",
+        "localidade": "OURIQUE"
+    },
+    "Serpa": {
+        "sitio": "cm-serpa.pt",
+        "rua": "Praça da República",
+        "codigopostal": "7830-389",
+        "localidade": "SERPA"
+    },
+    "Vidigueira": {
+        "sitio": "cm-vidigueira.pt",
+        "rua": "Praça da República",
+        "codigopostal": "7960-225",
+        "localidade": "VIDIGUEIRA"
+    },
+    "Amares": {
+        "sitio": "cm-amares.pt",
+        "rua": "Largo do Município",
+        "codigopostal": "4720-058",
+        "localidade": "AMARES"
+    },
+    "Barcelos": {
+        "sitio": "cm-barcelos.pt",
+        "rua": "Largo do Município",
+        "codigopostal": "4750-323",
+        "localidade": "BARCELOS"
+    },
+    "Braga": {
+        "sitio": "cm-braga.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "4704-514",
+        "localidade": "BRAGA"
+    },
+    "Cabeceiras de Basto": {
+        "sitio": "cabeceirasdebasto.pt",
+        "rua": "Praça da República N.º 467",
+        "codigopostal": "4860-355",
+        "localidade": "CABECEIRAS DE BASTO"
+    },
+    "Celorico de Basto": {
+        "sitio": "mun-celoricodebasto.pt",
+        "rua": "Praça Cardeal D. António Ribeiro",
+        "codigopostal": "4890-220",
+        "localidade": "CELORICO DE BASTO"
+    },
+    "Esposende": {
+        "sitio": "cm-esposende.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "4740-223",
+        "localidade": "ESPOSENDE"
+    },
+    "Fafe": {
+        "sitio": "cm-fafe.pt",
+        "rua": "Avenida 5 de Outubro",
+        "codigopostal": "4820-501",
+        "localidade": "FAFE"
+    },
+    "Guimarães": {
+        "sitio": "cm-guimaraes.pt",
+        "rua": "Largo Cónego José Maria Gomes",
+        "codigopostal": "4804-534",
+        "localidade": "GUIMARÃES"
+    },
+    "Póvoa de Lanhoso": {
+        "sitio": "mun-planhoso.pt",
+        "rua": "Av. da República",
+        "codigopostal": "4830-513",
+        "localidade": "PÓVOA DE LANHOSO"
+    },
+    "Terras de Bouro": {
+        "sitio": "cm-terrasdebouro.pt",
+        "rua": "Paços do Município",
+        "codigopostal": "4840-100",
+        "localidade": "TERRAS DE BOURO"
+    },
+    "Vieira do Minho": {
+        "sitio": "cm-vminho.pt",
+        "rua": "Praça Guilherme de Abreu",
+        "codigopostal": "4850-527",
+        "localidade": "VIEIRA DO MINHO"
+    },
+    "Vila Nova de Famalicão": {
+        "sitio": "vilanovadefamalicao.org",
+        "rua": "Praça Álvaro Marques",
+        "codigopostal": "4764-502",
+        "localidade": "VILA NOVA DE FAMALICÃO"
+    },
+    "Vila Verde": {
+        "sitio": "cm-vilaverde.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "4730-733",
+        "localidade": "VILA VERDE"
+    },
+    "Vizela": {
+        "sitio": "cm-vizela.pt",
+        "rua": "Praça do Município n.º 522",
+        "codigopostal": "4815-013",
+        "localidade": "Vizela"
+    },
+    "Alfândega da fé": {
+        "sitio": "cm-alfandegadafe.pt",
+        "rua": "Rua Camilo Mendonça",
+        "codigopostal": "5350-045",
+        "localidade": "ALFÂNDEGA DA FÉ"
+    },
+    "Bragança": {
+        "sitio": "cm-braganca.pt",
+        "rua": "Forte S. João de Deus",
+        "codigopostal": "5301-902",
+        "localidade": "BRAGANÇA"
+    },
+    "Carrazeda de Ansiães": {
+        "sitio": "cm-carrazedadeansiaes.pt",
+        "rua": "Rua Jerónimo Barbosa",
+        "codigopostal": "5140-077",
+        "localidade": "CARRAZEDA DE ANSIÃES"
+    },
+    "Freixo de Espada à Cinta": {
+        "sitio": "cm-freixoespadacinta.pt",
+        "rua": "Av.ªGuerra Junqueiro",
+        "codigopostal": "5180-104",
+        "localidade": "Freixo de Espada à Cinta"
+    },
+    "Macedo de Cavaleiros": {
+        "sitio": "cm-macedodecavaleiros.pt",
+        "rua": "Jardim 1º Maio",
+        "codigopostal": "5340-218",
+        "localidade": "MACEDO DE CAVALEIROS"
+    },
+    "Miranda do Douro": {
+        "sitio": "cm-mdouro.pt",
+        "rua": "Largo D. João III",
+        "codigopostal": "5210-190",
+        "localidade": "MIRANDA DO DOURO"
+    },
+    "Mirandela": {
+        "sitio": "cm-mirandela.pt",
+        "rua": "Largo do Município",
+        "codigopostal": "5370-288",
+        "localidade": "MIRANDELA"
+    },
+    "Mogadouro": {
+        "sitio": "mogadouro.pt",
+        "rua": "Largo do Convento de S. Francisco",
+        "codigopostal": "5200-244",
+        "localidade": "MOGADOURO"
+    },
+    "Torre de Moncorvo": {
+        "sitio": "torredemoncorvo.pt",
+        "rua": "Largo do Castelo",
+        "codigopostal": "5160-267",
+        "localidade": "TORRE DE MONCORVO"
+    },
+    "Vila Flor": {
+        "sitio": "cm-vilaflor.pt",
+        "rua": "Avenida Marechal Carmona",
+        "codigopostal": "5360-303",
+        "localidade": "VILA FLOR"
+    },
+    "Vimioso": {
+        "sitio": "cm-vimioso.pt",
+        "rua": "Praça Eduardo Coelho",
+        "codigopostal": "5230-315",
+        "localidade": "VIMIOSO"
+    },
+    "Vinhais": {
+        "sitio": "cm-vinhais.pt",
+        "rua": "R. das Freiras, N.º 13",
+        "codigopostal": "5320-326",
+        "localidade": "VINHAIS"
     },
     "Belmonte": {
         "sitio": "cm-belmonte.pt",
         "rua": "Rua Pedro Álvares Cabral, N.º 135",
-        "codigopostal": "6250-088"
+        "codigopostal": "6250-088",
+        "localidade": "Belmonte"
     },
     "Castelo Branco": {
         "sitio": "cm-castelobranco.pt",
         "rua": "Praça do Município",
-        "codigopostal": "6000-148"
+        "codigopostal": "6000-148",
+        "localidade": "CASTELO BRANCO"
     },
     "Covilhã": {
         "sitio": "cm-covilha.pt",
         "rua": "Praça do Município",
-        "codigopostal": "6200-407"
+        "codigopostal": "6200-407",
+        "localidade": "COVILHÃ"
     },
     "Fundão": {
         "sitio": "cm-fundao.pt",
         "rua": "Praça do Município",
-        "codigopostal": "6230-338"
+        "codigopostal": "6230-338",
+        "localidade": "FUNDÃO"
     },
     "Idanha-a-nova": {
         "sitio": "cm-idanhanova.pt",
         "rua": "Largo do Município",
-        "codigopostal": "6060-163"
+        "codigopostal": "6060-163",
+        "localidade": "IDANHA-A-NOVA"
     },
     "Oleiros": {
         "sitio": "cm-oleiros.pt",
         "rua": "Praça do Município",
-        "codigopostal": "6160-409"
+        "codigopostal": "6160-409",
+        "localidade": "OLEIROS"
     },
     "Penamacor": {
         "sitio": "cm-penamacor.pt",
         "rua": "Praça do Município",
-        "codigopostal": "6090-543"
+        "codigopostal": "6090-543",
+        "localidade": "PENAMACOR"
     },
     "Proença-a-nova": {
         "sitio": "cm-proencanova.pt",
         "rua": "Avenida do Colégio",
-        "codigopostal": "6150-401"
+        "codigopostal": "6150-401",
+        "localidade": "PROENÇA-A-NOVA"
     },
     "Sertã": {
         "sitio": "cm-serta.pt",
         "rua": "Largo do Município",
-        "codigopostal": "6100-738"
+        "codigopostal": "6100-738",
+        "localidade": "SERTÃ"
     },
     "Vila de Rei": {
         "sitio": "cm-viladerei.pt",
         "rua": "Praça Família Mattos Silva Neves",
-        "codigopostal": "6110-174"
+        "codigopostal": "6110-174",
+        "localidade": "VILA DE REI"
     },
     "Vila Velha de Ródão": {
         "sitio": "cm-vvrodao.pt",
         "rua": "Edificio Paços Concelho, Rua de Santana",
-        "codigopostal": "6030-230"
+        "codigopostal": "6030-230",
+        "localidade": "VILA VELHA DE RÓDÃO"
     },
     "Arganil": {
         "sitio": "cm-arganil.pt",
         "rua": "Praça Simões Dias, Apartado 10",
-        "codigopostal": "3304-954"
+        "codigopostal": "3304-954",
+        "localidade": "ARGANIL"
     },
     "Cantanhede": {
         "sitio": "cm-cantanhede.pt",
         "rua": "Praça Marquês de Marialva - Apartado 154",
-        "codigopostal": "3064-909"
+        "codigopostal": "3064-909",
+        "localidade": "CANTANHEDE"
     },
     "Coimbra": {
         "sitio": "cm-coimbra.pt",
         "rua": "Praça 8 de Maio",
-        "codigopostal": "3000-300"
+        "codigopostal": "3000-300",
+        "localidade": "COIMBRA"
     },
     "Condeixa-a-nova": {
         "sitio": "cm-condeixa.pt",
         "rua": "Largo Artur Barreto",
-        "codigopostal": "3150-128"
+        "codigopostal": "3150-128",
+        "localidade": "CONDEIXA-A-NOVA"
     },
     "Figueira da Foz": {
         "sitio": "cm-figfoz.pt",
         "rua": "Avenida Saraiva de Carvalho",
-        "codigopostal": "3084-501"
+        "codigopostal": "3084-501",
+        "localidade": "FIGUEIRA DA FOZ"
     },
     "Góis": {
         "sitio": "cm-gois.pt",
         "rua": "Praça da República",
-        "codigopostal": "3330-310"
+        "codigopostal": "3330-310",
+        "localidade": "GÓIS"
     },
     "Lousã": {
         "sitio": "cm-lousa.pt",
         "rua": "Rua Dr. João Santos",
-        "codigopostal": "3200-953"
+        "codigopostal": "3200-953",
+        "localidade": "Lousã"
     },
     "Mira": {
         "sitio": "cm-mira.pt",
         "rua": "Praça da República",
-        "codigopostal": "3070-306"
+        "codigopostal": "3070-306",
+        "localidade": "MIRA"
     },
     "Miranda do Corvo": {
         "sitio": "cm-mirandadocorvo.pt",
         "rua": "Praça José Falcão",
-        "codigopostal": "3220-403"
+        "codigopostal": "3220-403",
+        "localidade": "MIRANDA DO CORVO"
     },
     "Montemor-o-velho": {
         "sitio": "cm-montemorvelho.pt",
         "rua": "Praça da República",
-        "codigopostal": "3140-258"
+        "codigopostal": "3140-258",
+        "localidade": "MONTEMOR-O-VELHO"
     },
     "Oliveira do Hospital": {
         "sitio": "cm-oliveiradohospital.pt",
         "rua": "Largo Conselheiro Cabral Metello",
-        "codigopostal": "3400-062"
+        "codigopostal": "3400-062",
+        "localidade": "OLIVEIRA DO HOSPITAL"
     },
     "Pampilhosa da Serra": {
         "sitio": "cm-pampilhosadaserra.pt",
         "rua": "Rua Rangel de Lima",
-        "codigopostal": "3320-229"
+        "codigopostal": "3320-229",
+        "localidade": "PAMPILHOSA DA SERRA"
     },
     "Penacova": {
         "sitio": "cm-penacova.pt",
         "rua": "Largo Alberto Leitão, nº 5",
-        "codigopostal": "3360-191"
+        "codigopostal": "3360-191",
+        "localidade": "PENACOVA"
     },
     "Penela": {
         "sitio": "cm-penela.pt",
         "rua": "Praça do Município",
-        "codigopostal": "3230-253"
+        "codigopostal": "3230-253",
+        "localidade": "PENELA"
     },
     "Soure": {
         "sitio": "cm-soure.pt",
         "rua": "Praça da República",
-        "codigopostal": "313-218"
+        "codigopostal": "313-218",
+        "localidade": "SOURE"
     },
     "Tábua": {
         "sitio": "cm-tabua.pt",
         "rua": "Praça da República",
-        "codigopostal": "3420-308"
+        "codigopostal": "3420-308",
+        "localidade": "TÁBUA"
     },
     "Vila Nova de Poiares": {
         "sitio": "cm-vilanovadepoiares.pt",
         "rua": "Largo da República",
-        "codigopostal": "3350-156"
+        "codigopostal": "3350-156",
+        "localidade": "VILA NOVA DE POIARES"
+    },
+    "Alandroal": {
+        "sitio": "cm-alandroal.pt",
+        "rua": "Praça da República",
+        "codigopostal": "7250-116",
+        "localidade": "Alandroal"
+    },
+    "Arraiolos": {
+        "sitio": "cm-arraiolos.pt",
+        "rua": "Praça do Município, N.º 27",
+        "codigopostal": "7040-027",
+        "localidade": "ARRAIOLOS"
+    },
+    "Borba": {
+        "sitio": "cm-borba.pt",
+        "rua": "Praça da República",
+        "codigopostal": "7150-249",
+        "localidade": "BORBA"
+    },
+    "Estremoz": {
+        "sitio": "cm-estremoz.pt",
+        "rua": "Rossio Marquês de Pombal",
+        "codigopostal": "7100-513",
+        "localidade": "ESTREMOZ"
+    },
+    "Évora": {
+        "sitio": "cm-evora.pt",
+        "rua": "Praça do Sertório",
+        "codigopostal": "7004-506",
+        "localidade": "EVORA"
+    },
+    "Montemor-o-novo": {
+        "sitio": "cm-montemornovo.pt",
+        "rua": "Largo Paços do Concelho",
+        "codigopostal": "7050-127",
+        "localidade": "MONTEMOR-O-NOVO"
+    },
+    "Mora": {
+        "sitio": "cm-mora.pt",
+        "rua": "Rua do Município",
+        "codigopostal": "7490-243",
+        "localidade": "MORA"
+    },
+    "Mourão": {
+        "sitio": "cm-mourao.pt",
+        "rua": "Praça da República N.º 20",
+        "codigopostal": "7240-233",
+        "localidade": "MOURÃO"
+    },
+    "Portel": {
+        "sitio": "cm-portel.pt",
+        "rua": "Praça D. Nuno Álvares Pereira",
+        "codigopostal": "7220-375",
+        "localidade": "Portel"
+    },
+    "Redondo": {
+        "sitio": "cm-redondo.pt",
+        "rua": "Praça da República",
+        "codigopostal": "717O-011",
+        "localidade": "REDONDO"
+    },
+    "Reguengos de Monsaraz": {
+        "sitio": "cm-reguengos-monsaraz.pt",
+        "rua": "Praça da Liberdade",
+        "codigopostal": "7200-370",
+        "localidade": "Reguengos de Monsaraz"
+    },
+    "Vendas Novas": {
+        "sitio": "cm-vendasnovas.pt",
+        "rua": "Avenida da República",
+        "codigopostal": "7080-099",
+        "localidade": "VENDAS NOVAS"
+    },
+    "Viana do Alentejo": {
+        "sitio": "cm-vianadoalentejo.pt",
+        "rua": "Rua Brito Camacho, N.º 13",
+        "codigopostal": "7090-237",
+        "localidade": "VIANA DO ALENTEJO"
+    },
+    "Vila Viçosa": {
+        "sitio": "cm-vilavicosa.pt",
+        "rua": "Praça da República",
+        "codigopostal": "7160-207",
+        "localidade": "VILA VIÇOSA"
+    },
+    "Albufeira": {
+        "sitio": "cm-albufeira.pt",
+        "rua": "Rua do Município",
+        "codigopostal": "8200-863",
+        "localidade": "ALBUFEIRA"
+    },
+    "Alcoutim": {
+        "sitio": "cm-alcoutim.pt",
+        "rua": "Rua do Município, N.º 12",
+        "codigopostal": "8970-066",
+        "localidade": "ALCOUTIM"
+    },
+    "Aljezur": {
+        "sitio": "cm-aljezur.pt",
+        "rua": "Rua Capitão Salgueiro Maia",
+        "codigopostal": "8670-005",
+        "localidade": "ALJEZUR"
+    },
+    "Castro Marim": {
+        "sitio": "cm-castromarim.pt",
+        "rua": "Rua Dr. José Alves Moreira, N.º 10",
+        "codigopostal": "8950-138",
+        "localidade": "CASTRO MARIM"
+    },
+    "Faro": {
+        "sitio": "cm-faro.pt",
+        "rua": "Largo da Sé",
+        "codigopostal": "8004-001",
+        "localidade": "FARO"
+    },
+    "Lagoa": {
+        "sitio": "cm-lagoa.pt",
+        "rua": "Largo do Município",
+        "codigopostal": "8401-851",
+        "localidade": "LAGOA"
+    },
+    "Lagos": {
+        "sitio": "cm-lagos.pt",
+        "rua": "Paços do Concelho Séc. XXI Praça do Município",
+        "codigopostal": "8600-293",
+        "localidade": "Lagos"
+    },
+    "Loulé": {
+        "sitio": "cm-loule.pt",
+        "rua": "Praça da República, N.º 5",
+        "codigopostal": "8100-270",
+        "localidade": "LOULÉ"
+    },
+    "Monchique": {
+        "sitio": "cm-monchique.pt",
+        "rua": "Travessa da Portela, N.º 2",
+        "codigopostal": "8550-470",
+        "localidade": "Monchique"
+    },
+    "Olhão": {
+        "sitio": "cm-olhao.pt",
+        "rua": "Largo Sebastião Mestre",
+        "codigopostal": "8700-349",
+        "localidade": "OLHÃO"
+    },
+    "Portimão": {
+        "sitio": "cm-portimao.pt",
+        "rua": "Praça 1º de Maio",
+        "codigopostal": "8500-543",
+        "localidade": "PORTIMÃO"
+    },
+    "São Brás de Alportel": {
+        "sitio": "cm-sbras.pt",
+        "rua": "Gago Coutinho, N.º 1",
+        "codigopostal": "8150-151",
+        "localidade": "SÃO BRÁS DE ALPORTEL"
+    },
+    "Silves": {
+        "sitio": "cm-silves.pt",
+        "rua": "Largo do Município",
+        "codigopostal": "8300-117",
+        "localidade": "SILVES"
+    },
+    "Tavira": {
+        "sitio": "cm-tavira.pt",
+        "rua": "Praça da República",
+        "codigopostal": "8800-951",
+        "localidade": "TAVIRA"
+    },
+    "Vila do Bispo": {
+        "sitio": "cm-viladobispo.pt",
+        "rua": "Paços do Concelho",
+        "codigopostal": "8650-407",
+        "localidade": "VILA DO BISPO"
+    },
+    "Vila Real de Santo António": {
+        "sitio": "cm-vrsa.pt",
+        "rua": "Praça Marquês de Pombal",
+        "codigopostal": "8900-231",
+        "localidade": "VILA REAL DE SANTO ANTÓNIO"
+    },
+    "Aguiar da Beira": {
+        "sitio": "cm-aguiardabeira.pt",
+        "rua": "Avenida da Liberdade, N.º 21",
+        "codigopostal": "3570-018",
+        "localidade": "AGUIAR DA BEIRA"
+    },
+    "Almeida": {
+        "sitio": "cm-almeida.pt",
+        "rua": "Praça da Liberdade, N.º 8",
+        "codigopostal": "6350-130",
+        "localidade": "ALMEIDA"
+    },
+    "Celorico da Beira": {
+        "sitio": "cm-celoricodabeira.pt",
+        "rua": "Rua Sacadura Cabral",
+        "codigopostal": "6360-350",
+        "localidade": "CELORICO DA BEIRA"
+    },
+    "Figueira de Castelo Rodrigo": {
+        "sitio": "cm-fcr.pt",
+        "rua": "Largo Dr. Vilhena, N.º 1",
+        "codigopostal": "6440-100",
+        "localidade": "FIGUEIRA DE CASTELO RODRIGO"
+    },
+    "Fornos de Algodres": {
+        "sitio": "cm-fornosdealgodres.pt",
+        "rua": "Estrada Nacional, N.º 16",
+        "codigopostal": "6370-999",
+        "localidade": "Fornos de Algodres"
+    },
+    "Gouveia": {
+        "sitio": "cm-gouveia.pt",
+        "rua": "Avenida 25 de Abril",
+        "codigopostal": "6290-554",
+        "localidade": "GOUVEIA"
+    },
+    "Guarda": {
+        "sitio": "mun-guarda.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "6301-854",
+        "localidade": "GUARDA"
+    },
+    "Manteigas": {
+        "sitio": "cm-manteigas.pt",
+        "rua": "Rua 1º de Maio",
+        "codigopostal": "6260-101",
+        "localidade": "MANTEIGAS"
+    },
+    "Mêda": {
+        "sitio": "cm-meda.pt",
+        "rua": "Largo do Município",
+        "codigopostal": "6430-197",
+        "localidade": "MÊDA"
+    },
+    "Pinhel": {
+        "sitio": "cm-pinhel.pt",
+        "rua": "Rua Travessa Portão Norte, N.º 2",
+        "codigopostal": "6400-303",
+        "localidade": "PINHEL"
+    },
+    "Sabugal": {
+        "sitio": "cm-sabugal.pt",
+        "rua": "Praça da República",
+        "codigopostal": "6324-007",
+        "localidade": "SABUGAL"
+    },
+    "Seia": {
+        "sitio": "cm-seia.pt",
+        "rua": "Largo Dr. Borges Pires",
+        "codigopostal": "6270-494",
+        "localidade": "SEIA"
+    },
+    "Trancoso": {
+        "sitio": "cm-trancoso.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "6420-107",
+        "localidade": "TRANCOSO"
+    },
+    "Vila Nova de Foz Côa": {
+        "sitio": "cm-fozcoa.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "5150-642",
+        "localidade": "VILA NOVA DE FOZ CÔA"
     },
     "Alcobaça": {
         "sitio": "cm-alcobaca.pt",
         "rua": "Praça João De Deus Ramos",
-        "codigopostal": "2461-501"
+        "codigopostal": "2461-501",
+        "localidade": "ALCOBAÇA"
     },
     "Alvaiázere": {
         "sitio": "cm-alvaiazere.pt",
         "rua": "Praça do Município",
-        "codigopostal": "3250-100"
+        "codigopostal": "3250-100",
+        "localidade": "ALVAIÁZERE"
     },
     "Ansião": {
         "sitio": "cm-ansiao.pt",
         "rua": "Praça do Município",
-        "codigopostal": "3240-153"
+        "codigopostal": "3240-153",
+        "localidade": "ANSIÃO"
     },
     "Batalha": {
         "sitio": "cm-batalha.pt",
         "rua": "Rua Infante D. Fernando",
-        "codigopostal": "2440-118"
+        "codigopostal": "2440-118",
+        "localidade": "BATALHA"
     },
     "Bombarral": {
         "sitio": "cm-bombarral.pt",
         "rua": "Largo do Município",
-        "codigopostal": "2540-046"
+        "codigopostal": "2540-046",
+        "localidade": "BOMBARRAL"
     },
     "Caldas da Rainha": {
         "sitio": "cm-caldas-rainha.pt",
         "rua": "Praça 25 de Abril",
-        "codigopostal": "2500-110"
+        "codigopostal": "2500-110",
+        "localidade": "CALDAS DA RAINHA"
     },
     "Castanheira de Pêra": {
         "sitio": "cm-castanheiradepera.pt",
         "rua": "Praça Visconde de Castanheira de Pêra",
-        "codigopostal": "3280-017"
+        "codigopostal": "3280-017",
+        "localidade": "CASTANHEIRA DE PÊRA"
     },
     "Figueiró Dos Vinhos": {
         "sitio": "cm-figueirodosvinhos.pt",
         "rua": "Praça do Município",
-        "codigopostal": "3260-408"
+        "codigopostal": "3260-408",
+        "localidade": "FIGUEIRÓ DOS VINHOS"
     },
     "Leiria": {
         "sitio": "cm-leiria.pt",
         "rua": "Largo do Município",
-        "codigopostal": "2414-006"
+        "codigopostal": "2414-006",
+        "localidade": "LEIRIA"
     },
     "Marinha Grande": {
         "sitio": "cm-mgrande.pt",
         "rua": "Praça Guilherme Stephens",
-        "codigopostal": "2430-960"
+        "codigopostal": "2430-960",
+        "localidade": "MARINHA GRANDE"
     },
     "Nazaré": {
         "sitio": "cm-nazare.pt",
         "rua": "Av. Vieira Guimarães",
-        "codigopostal": "2450-951"
+        "codigopostal": "2450-951",
+        "localidade": "NAZARÉ"
     },
     "Óbidos": {
         "sitio": "cm-obidos.pt",
         "rua": "Largo de São Pedro",
-        "codigopostal": "2510-086"
+        "codigopostal": "2510-086",
+        "localidade": "ÓBIDOS"
     },
     "Pedrógão Grande": {
         "sitio": "cm-pedrogaogrande.pt",
         "rua": "A Devesa",
-        "codigopostal": "3271-909"
+        "codigopostal": "3271-909",
+        "localidade": "PEDRÓGÃO GRANDE"
     },
     "Peniche": {
         "sitio": "cm-peniche.pt",
         "rua": "Largo do Município",
-        "codigopostal": "2520-239"
+        "codigopostal": "2520-239",
+        "localidade": "PENICHE"
     },
     "Pombal": {
         "sitio": "cm-pombal.pt",
         "rua": "Largo do Cardal",
-        "codigopostal": "3100-440"
+        "codigopostal": "3100-440",
+        "localidade": "POMBAL"
     },
     "Porto de Mós": {
         "sitio": "municipio-portodemos.pt",
         "rua": "Praça da República",
-        "codigopostal": "2484-001"
+        "codigopostal": "2484-001",
+        "localidade": "PORTO DE MÓS"
+    },
+    "Alenquer": {
+        "sitio": "cm-alenquer.pt",
+        "rua": "Praça Luís de Camões",
+        "codigopostal": "2580-317",
+        "localidade": "ALENQUER"
+    },
+    "Amadora": {
+        "sitio": "cm-amadora.pt",
+        "rua": "Av. Movimento das Forças Armadas",
+        "codigopostal": "2700-595",
+        "localidade": "AMADORA"
+    },
+    "Arruda Dos Vinhos": {
+        "sitio": "cm-arruda.pt",
+        "rua": "Largo Miguel Bombarda",
+        "codigopostal": "2630-112",
+        "localidade": "ARRUDA DOS VINHOS"
+    },
+    "Azambuja": {
+        "sitio": "cm-azambuja.pt",
+        "rua": "Praça do Município, N.º 19",
+        "codigopostal": "2050-315",
+        "localidade": "AZAMBUJA"
+    },
+    "Cadaval": {
+        "sitio": "cm-cadaval.pt",
+        "rua": "Rua Dr. Francisco Sá Carneiro",
+        "codigopostal": "2550-103",
+        "localidade": "CADAVAL"
+    },
+    "Cascais": {
+        "sitio": "cm-cascais.pt",
+        "rua": "Praça 5 de Outubro",
+        "codigopostal": "2754-501",
+        "localidade": "CASCAIS"
+    },
+    "Lisboa": {
+        "sitio": "cm-lisboa.pt",
+        "rua": "Paços do Concelho - Praça do Município",
+        "codigopostal": "1100-365",
+        "localidade": "LISBOA"
+    },
+    "Loures": {
+        "sitio": "cm-loures.pt",
+        "rua": "Praça da Liberdade",
+        "codigopostal": "2674-501",
+        "localidade": "LOURES"
+    },
+    "Lourinhã": {
+        "sitio": "cm-lourinha.pt",
+        "rua": "Praça José Máximo da Costa",
+        "codigopostal": "2534-500",
+        "localidade": "LOURINHÃ"
+    },
+    "Mafra": {
+        "sitio": "cm-mafra.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "2644-001",
+        "localidade": "MAFRA"
+    },
+    "Odivelas": {
+        "sitio": "cm-odivelas.pt",
+        "rua": "Paços do Concelho - Quinta da Memória",
+        "codigopostal": "2675-348",
+        "localidade": "ODIVELAS"
+    },
+    "Oeiras": {
+        "sitio": "cm-oeiras.pt",
+        "rua": "Largo Marquês de Pombal",
+        "codigopostal": "2754-501",
+        "localidade": "OEIRAS"
+    },
+    "Sintra": {
+        "sitio": "cm-sintra.pt",
+        "rua": "Largo Dr. Virgílio Horta",
+        "codigopostal": "2714-501",
+        "localidade": "SINTRA"
+    },
+    "Sobral de Monte Agraço": {
+        "sitio": "cm-sobral.pt",
+        "rua": "Praça Dr. Eugénio Dias, N.º 4",
+        "codigopostal": "2590-016",
+        "localidade": "Sobral de Monte Agraço"
+    },
+    "Torres Vedras": {
+        "sitio": "cm-tvedras.pt",
+        "rua": "Avenida  5 de Outubro",
+        "codigopostal": "2560-270",
+        "localidade": "TORRES VEDRAS"
+    },
+    "Vila Franca de Xira": {
+        "sitio": "cm-vfxira.pt",
+        "rua": "Praça Afonso de Albuquerque, N.º 2",
+        "codigopostal": "2600-093",
+        "localidade": "VILA FRANCA DE XIRA"
+    },
+    "Alter do Chão": {
+        "sitio": "cm-alter-chao.pt",
+        "rua": "Largo do Município, N.º 2",
+        "codigopostal": "7440-026",
+        "localidade": "ALTER DO CHÃO"
+    },
+    "Arronches": {
+        "sitio": "cm-arronches.pt",
+        "rua": "Praça da República,  Apartado 8",
+        "codigopostal": "7340-012",
+        "localidade": "ARRONCHES"
+    },
+    "Avis": {
+        "sitio": "cm-avis.pt",
+        "rua": "Largo Cândido dos Reis - Apartado 25",
+        "codigopostal": "7480-116",
+        "localidade": "AVIS"
+    },
+    "Campo Maior": {
+        "sitio": "cm-campo-maior.pt",
+        "rua": "Praça da República",
+        "codigopostal": "7370-954",
+        "localidade": "CAMPO MAIOR"
+    },
+    "Castelo de Vide": {
+        "sitio": "cm-castelo-vide.pt",
+        "rua": "Rua Bartolomeu Álvares da Santa",
+        "codigopostal": "7320",
+        "localidade": "CASTELO DE VIDE"
+    },
+    "Crato": {
+        "sitio": "cm-crato.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "7430-999",
+        "localidade": "CRATO"
+    },
+    "Elvas": {
+        "sitio": "cm-elvas.pt",
+        "rua": "Rua Isabel Maria Picão - Apartado 70",
+        "codigopostal": "7350-953",
+        "localidade": "ELVAS"
+    },
+    "Fronteira": {
+        "sitio": "cm-fronteira.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "7460-110",
+        "localidade": "FRONTEIRA"
+    },
+    "Gavião": {
+        "sitio": "cm-gaviao.pt",
+        "rua": "Largo do Município",
+        "codigopostal": "6040-102",
+        "localidade": "GAVIÃO"
+    },
+    "Marvão": {
+        "sitio": "cm-marvao.pt",
+        "rua": "Largo de Santa Maria",
+        "codigopostal": "7330-101",
+        "localidade": "MARVÃO"
+    },
+    "Monforte": {
+        "sitio": "cm-monforte.pt",
+        "rua": "Praça da República",
+        "codigopostal": "7450-115",
+        "localidade": "MONFORTE"
+    },
+    "Nisa": {
+        "sitio": "cm-nisa.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "6050-358",
+        "localidade": "NISA"
+    },
+    "Ponte de Sor": {
+        "sitio": "cm-pontedesor.pt",
+        "rua": "CAMPO DA RESTAURAÇÃO",
+        "codigopostal": "7400-223",
+        "localidade": "PONTE DE SOR"
+    },
+    "Portalegre": {
+        "sitio": "cm-portalegre.pt",
+        "rua": "Rua Guilherme Gomes Fernandes, N.º 28",
+        "codigopostal": "7300-186",
+        "localidade": "PORTALEGRE"
+    },
+    "Sousel": {
+        "sitio": "cm-sousel.pt",
+        "rua": "Praça da República",
+        "codigopostal": "7470-220",
+        "localidade": "SOUSEL"
+    },
+    "Amarante": {
+        "sitio": "cm-amarante.pt",
+        "rua": "Alameda Teixeira de Pascoaes",
+        "codigopostal": "4600-011",
+        "localidade": "AMARANTE"
+    },
+    "Baião": {
+        "sitio": "cm-baiao.pt",
+        "rua": "Praça Heróis do Ultramar",
+        "codigopostal": "4640-158",
+        "localidade": "BAIÃO"
+    },
+    "Felgueiras": {
+        "sitio": "cm-felgueiras.pt",
+        "rua": "Praça da República",
+        "codigopostal": "4610-116",
+        "localidade": "FELGUEIRAS"
+    },
+    "Gondomar": {
+        "sitio": "cm-gondomar.pt",
+        "rua": "Praça Manuel Guedes",
+        "codigopostal": "4420-193",
+        "localidade": "GONDOMAR"
+    },
+    "Lousada": {
+        "sitio": "cm-lousada.pt",
+        "rua": "Praça Dr. Francisco Sá Carneiro",
+        "codigopostal": "4621-909",
+        "localidade": "LOUSADA"
+    },
+    "Maia": {
+        "sitio": "cm-maia.pt",
+        "rua": "Praça Doutor José Vieira Carvalho",
+        "codigopostal": "4474-006",
+        "localidade": "MAIA"
+    },
+    "Marco de Canaveses": {
+        "sitio": "cm-marco-canaveses.pt",
+        "rua": "Largo Sacadura Cabral",
+        "codigopostal": "4630-219",
+        "localidade": "MARCO DE CANAVESES"
+    },
+    "Matosinhos": {
+        "sitio": "cm-matosinhos.pt",
+        "rua": "Av. D. Afonso Henriques",
+        "codigopostal": "4450-510",
+        "localidade": "MATOSINHOS"
+    },
+    "Paços de Ferreira": {
+        "sitio": "cm-pacosdeferreira.pt",
+        "rua": "Praça da República, 46",
+        "codigopostal": "4590-527",
+        "localidade": "PAÇOS DE FERREIRA"
+    },
+    "Paredes": {
+        "sitio": "cm-paredes.pt",
+        "rua": "Parque Jose Guilherme",
+        "codigopostal": "4580-130",
+        "localidade": "PAREDES"
+    },
+    "Penafiel": {
+        "sitio": "cm-penafiel.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "4564-002",
+        "localidade": "PENAFIEL"
+    },
+    "Porto": {
+        "sitio": "cm-porto.pt",
+        "rua": "Praça General Humberto Delgado",
+        "codigopostal": "4049-001",
+        "localidade": "PORTO"
+    },
+    "Póvoa de Varzim": {
+        "sitio": "cm-pvarzim.pt",
+        "rua": "Praça do Almada, N.º 5A",
+        "codigopostal": "4490-438",
+        "localidade": "PÓVOA DE VARZIM"
+    },
+    "Santo Tirso": {
+        "sitio": "cm-stirso.pt",
+        "rua": "Praça 25 de Abril",
+        "codigopostal": "4780-373",
+        "localidade": "SANTO TIRSO"
+    },
+    "Trofa": {
+        "sitio": "mun-trofa.pt",
+        "rua": "Rua das Indústrias, N.º 393 (EN 14), Apartado 65",
+        "codigopostal": "4786-909",
+        "localidade": "TROFA"
+    },
+    "Valongo": {
+        "sitio": "cm-valongo.pt",
+        "rua": "Avenida 5 de Outubro, N.º 160",
+        "codigopostal": "4440-503",
+        "localidade": "VALONGO"
+    },
+    "Vila do Conde": {
+        "sitio": "cm-viladoconde.pt",
+        "rua": "Praça Vasco da Gama",
+        "codigopostal": "4480-454",
+        "localidade": "VILA DO CONDE"
+    },
+    "Vila Nova de Gaia": {
+        "sitio": "cm-gaia.pt",
+        "rua": "Rua Álvares Cabral",
+        "codigopostal": "4400-017",
+        "localidade": "VILA NOVA DE GAIA"
     },
     "Abrantes": {
         "sitio": "cm-abrantes.pt",
         "rua": "Praça Raimundo Soares",
-        "codigopostal": "2200-366"
+        "codigopostal": "2200-366",
+        "localidade": "ABRANTES"
     },
     "Alcanena": {
         "sitio": "cm-alcanena.pt",
         "rua": "Praça 8 de Maio",
-        "codigopostal": "2380-037"
+        "codigopostal": "2380-037",
+        "localidade": "ALCANENA"
     },
     "Almeirim": {
         "sitio": "cm-almeirim.pt",
         "rua": "Rua 5 de Outubro",
-        "codigopostal": "2080-052"
+        "codigopostal": "2080-052",
+        "localidade": "ALMEIRIM"
     },
     "Alpiarça": {
         "sitio": "cm-alpiarca.pt",
         "rua": "Rua José Relvas, N.º 374,   Apartado 25",
-        "codigopostal": "2094-909"
+        "codigopostal": "2094-909",
+        "localidade": "ALPIARÇA"
     },
     "Benavente": {
         "sitio": "cm-benavente.pt",
         "rua": "Praça do Município",
-        "codigopostal": "2130-038"
+        "codigopostal": "2130-038",
+        "localidade": "BENAVENTE"
     },
     "Cartaxo": {
         "sitio": "cm-cartaxo.pt",
         "rua": "Praça 15 de Dezembro",
-        "codigopostal": "2070-050"
+        "codigopostal": "2070-050",
+        "localidade": "CARTAXO"
     },
     "Chamusca": {
         "sitio": "cm-chamusca.pt",
         "rua": "Rua Direita de São Pedro",
-        "codigopostal": "2140-098"
+        "codigopostal": "2140-098",
+        "localidade": "CHAMUSCA"
     },
     "Constância": {
         "sitio": "cm-constancia.pt",
         "rua": "Estrada Nacional, N.º 3",
-        "codigopostal": "2250-028"
+        "codigopostal": "2250-028",
+        "localidade": "CONSTÂNCIA"
     },
     "Coruche": {
         "sitio": "cm-coruche.pt",
         "rua": "Edifício Paços do Concelho,  Praça da Liberdade",
-        "codigopostal": "2100-121"
+        "codigopostal": "2100-121",
+        "localidade": "CORUCHE"
     },
     "Entroncamento": {
         "sitio": "cm-entroncamento.pt",
         "rua": "Largo José Duarte Coelho",
-        "codigopostal": "2330-078"
+        "codigopostal": "2330-078",
+        "localidade": "ENTRONCAMENTO"
     },
     "Ferreira do Zêzere": {
         "sitio": "cm-ferreiradozezere.pt",
         "rua": "Praça Dias Ferreira",
-        "codigopostal": "2240-340"
+        "codigopostal": "2240-340",
+        "localidade": "FERREIRA DO ZÊZERE"
     },
     "Golegã": {
         "sitio": "cm-golega.pt",
         "rua": "Largo D.Manuel I",
-        "codigopostal": "2150-128"
+        "codigopostal": "2150-128",
+        "localidade": "GOLEGÃ"
     },
     "Mação": {
         "sitio": "cm-macao.pt",
         "rua": "Rua Padre António Pereira Figueiredo",
-        "codigopostal": "6120-750"
+        "codigopostal": "6120-750",
+        "localidade": "MAÇÃO"
     },
     "Ourém": {
         "sitio": "cm-ourem.pt",
         "rua": "Praça do Município, 11",
-        "codigopostal": "2490-498"
+        "codigopostal": "2490-498",
+        "localidade": "OURÉM"
     },
     "Rio Maior": {
         "sitio": "cm-riomaior.pt",
         "rua": "Praça da República",
-        "codigopostal": "2040-320"
+        "codigopostal": "2040-320",
+        "localidade": "RIO MAIOR"
     },
     "Salvaterra de Magos": {
         "sitio": "cm-salvaterrademagos.pt",
         "rua": "Praça da República N.º 1",
-        "codigopostal": "2120-072"
+        "codigopostal": "2120-072",
+        "localidade": "SALVATERRA DE MAGOS"
     },
     "Santarém": {
         "sitio": "cm-santarem.pt",
         "rua": "Praça do Município",
-        "codigopostal": "2005-245"
+        "codigopostal": "2005-245",
+        "localidade": "SANTARÉM"
     },
     "Sardoal": {
         "sitio": "cm-sardoal.pt",
         "rua": "Praça da República",
-        "codigopostal": "2230-222"
+        "codigopostal": "2230-222",
+        "localidade": "SARDOAL"
     },
     "Tomar": {
         "sitio": "cm-tomar.pt",
         "rua": "Praça da República",
-        "codigopostal": "2300-550"
+        "codigopostal": "2300-550",
+        "localidade": "TOMAR"
     },
     "Torres Novas": {
         "sitio": "cm-torresnovas.pt",
         "rua": "Rua General António de Vasconcelos Correia",
-        "codigopostal": "2350-421"
+        "codigopostal": "2350-421",
+        "localidade": "TORRES NOVAS"
     },
     "Vila Nova da Barquinha": {
         "sitio": "cm-vnbarquinha.pt",
         "rua": "Rua da República",
-        "codigopostal": "2260-411"
+        "codigopostal": "2260-411",
+        "localidade": "VILA NOVA DA BARQUINHA"
+    },
+    "Alcácer do Sal": {
+        "sitio": "cm-alcacerdosal.pt",
+        "rua": "Praça Pedro Nunes",
+        "codigopostal": "7580-125",
+        "localidade": "ALCÁCER DO SAL"
+    },
+    "Alcochete": {
+        "sitio": "cm-alcochete.pt",
+        "rua": "Largo de S. João Batista",
+        "codigopostal": "2890-108",
+        "localidade": "ALCOCHETE"
+    },
+    "Almada": {
+        "sitio": "m-almada.pt",
+        "rua": "Largo Luís de Camões",
+        "codigopostal": "2800-158",
+        "localidade": "Almada"
+    },
+    "Barreiro": {
+        "sitio": "cm-barreiro.pt",
+        "rua": "Rua Miguel Bombarda",
+        "codigopostal": "2830-355",
+        "localidade": "BARREIRO"
+    },
+    "Grândola": {
+        "sitio": "cm-grandola.pt",
+        "rua": "Rua Dr. José Pereira Barradas",
+        "codigopostal": "7570-281",
+        "localidade": "GRÂNDOLA"
+    },
+    "Moita": {
+        "sitio": "cm-moita.pt",
+        "rua": "Praça da República",
+        "codigopostal": "2864-007",
+        "localidade": "MOITA"
+    },
+    "Montijo": {
+        "sitio": "mun-montijo.pt",
+        "rua": "Rua Manuel Neves Nunes de Almeida",
+        "codigopostal": "2870-352",
+        "localidade": "MONTIJO"
+    },
+    "Palmela": {
+        "sitio": "cm-palmela.pt",
+        "rua": "Largo do Município",
+        "codigopostal": "2954-001",
+        "localidade": "PALMELA"
+    },
+    "Santiago do Cacém": {
+        "sitio": "cm-santiagocacem.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "7540-136",
+        "localidade": "SANTIAGO DO CACÉM"
+    },
+    "Seixal": {
+        "sitio": "cm-seixal.pt",
+        "rua": "Alameda dos Bombeiros Voluntários, N.º 45",
+        "codigopostal": "2844-001",
+        "localidade": "Seixal"
+    },
+    "Sesimbra": {
+        "sitio": "cm-sesimbra.pt",
+        "rua": "Rua da República",
+        "codigopostal": "2970-741",
+        "localidade": "SESIMBRA"
+    },
+    "Setúbal": {
+        "sitio": "mun-setubal.pt",
+        "rua": "Edificio Paços do Concelho, Praça de Bocage",
+        "codigopostal": "2901-866",
+        "localidade": "SETÚBAL"
+    },
+    "Sines": {
+        "sitio": "cm-sines.pt",
+        "rua": "Largo Ramos Costa",
+        "codigopostal": "7520-159",
+        "localidade": "SINES"
+    },
+    "Arcos de Valdevez": {
+        "sitio": "cmav.pt",
+        "rua": "Praça Municipal",
+        "codigopostal": "4974-003",
+        "localidade": "ARCOS DE VALDEVEZ"
+    },
+    "Caminha": {
+        "sitio": "cm-caminha.pt",
+        "rua": "Praça Conselheiro Silva Torres",
+        "codigopostal": "4910-122",
+        "localidade": "CAMINHA"
+    },
+    "Melgaço": {
+        "sitio": "cm-melgaco.pt",
+        "rua": "Largo Hermenigildo Solheiro",
+        "codigopostal": "4960-551",
+        "localidade": "MELGAÇO"
+    },
+    "Monção": {
+        "sitio": "cm-moncao.pt",
+        "rua": "Largo de Camões",
+        "codigopostal": "4950-444",
+        "localidade": "MONÇÃO"
+    },
+    "Paredes de Coura": {
+        "sitio": "paredesdecoura.pt",
+        "rua": "Largo Visconde de Moselos - Apartado 6",
+        "codigopostal": "4941-909",
+        "localidade": "PAREDES DE COURA"
+    },
+    "Ponte da Barca": {
+        "sitio": "cmpb.pt",
+        "rua": "Praça Dr. António Lacerda",
+        "codigopostal": "4980-620",
+        "localidade": "PONTE DA BARCA"
+    },
+    "Ponte de Lima": {
+        "sitio": "cm-pontedelima.pt",
+        "rua": "Praça da República",
+        "codigopostal": "4990-062",
+        "localidade": "PONTE DE LIMA"
+    },
+    "Valença": {
+        "sitio": "cm-valenca.pt",
+        "rua": "Praça da República",
+        "codigopostal": "4930-702",
+        "localidade": "VALENÇA"
+    },
+    "Viana do Castelo": {
+        "sitio": "cm-viana-castelo.pt",
+        "rua": "Passeio das Mordomas da Romaria",
+        "codigopostal": "4904-877",
+        "localidade": "VIANA DO CASTELO"
+    },
+    "Vila Nova de Cerveira": {
+        "sitio": "cm-vncerveira.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "4920-284",
+        "localidade": "VILA NOVA DE CERVEIRA"
+    },
+    "Alijó": {
+        "sitio": "cm-alijo.pt",
+        "rua": "Rua General Pedrosa, N.º 13",
+        "codigopostal": "5070-051",
+        "localidade": "ALIJÓ"
+    },
+    "Boticas": {
+        "sitio": "cm-boticas.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "5460-304",
+        "localidade": "BOTICAS"
+    },
+    "Chaves": {
+        "sitio": "chaves.pt",
+        "rua": "Largo de Camões",
+        "codigopostal": "5400-150",
+        "localidade": "CHAVES"
+    },
+    "Mesão Frio": {
+        "sitio": "cm-mesaofrio.pt",
+        "rua": "Avenida José Maria Alpoim",
+        "codigopostal": "5040-310",
+        "localidade": "MESÃO FRIO"
+    },
+    "Mondim de Basto": {
+        "sitio": "http://municipio.mondimdebasto.pt",
+        "rua": "Largo Conde de Vila Real",
+        "codigopostal": "4880-236",
+        "localidade": "MONDIM DE BASTO"
+    },
+    "Montalegre": {
+        "sitio": "cm-montalegre.pt",
+        "rua": "Praça do Município nº 1",
+        "codigopostal": "5470-214",
+        "localidade": "MONTALEGRE"
+    },
+    "Murça": {
+        "sitio": "cm-murca.pt",
+        "rua": "Praça 5 de Outubro",
+        "codigopostal": "5090-112",
+        "localidade": "MURÇA"
+    },
+    "Peso da Régua": {
+        "sitio": "www1.cm-pesoregua.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "5054-003",
+        "localidade": "PESO DA RÉGUA"
+    },
+    "Ribeira de Pena": {
+        "sitio": "cm-rpena.pt",
+        "rua": "Praça do Município",
+        "codigopostal": "4870-152",
+        "localidade": "RIBEIRA DE PENA"
+    },
+    "Sabrosa": {
+        "sitio": "sabrosa.pt",
+        "rua": "Rua do Loreto",
+        "codigopostal": "5060-338",
+        "localidade": "SABROSA"
+    },
+    "Santa Marta de Penaguião": {
+        "sitio": "cm-smpenaguiao.pt",
+        "rua": "Rua dos Combatentes",
+        "codigopostal": "5030-477",
+        "localidade": "SANTA MARTA DE PENAGUIÃO"
+    },
+    "Valpaços": {
+        "sitio": "http://valpacos.pt",
+        "rua": "Rua D.ª Maria do Carmo Carmona",
+        "codigopostal": "5430-469",
+        "localidade": "VALPAÇOS"
+    },
+    "Vila Pouca de Aguiar": {
+        "sitio": "cm-vpaguiar.pt",
+        "rua": "Rua Dr. Henrique Botelho",
+        "codigopostal": "5450-027",
+        "localidade": "VILA POUCA DE AGUIAR"
+    },
+    "Vila Real": {
+        "sitio": "cm-vilareal.pt",
+        "rua": "Avenida Carvalho Araújo",
+        "codigopostal": "5000-651",
+        "localidade": "VILA REAL"
     },
     "Armamar": {
         "sitio": "cm-armamar.pt",
         "rua": "Praça da República",
-        "codigopostal": "5110-127"
+        "codigopostal": "5110-127",
+        "localidade": "ARMAMAR"
     },
     "Carregal do Sal": {
         "sitio": "carregal-digital.pt",
         "rua": "Praça do Município",
-        "codigopostal": "3430-909"
+        "codigopostal": "3430-909",
+        "localidade": "CARREGAL DO SAL"
     },
     "Castro Daire": {
         "sitio": "cm-castrodaire.pt",
         "rua": "Rua Dr. Pio Figueiredo N.º 42",
-        "codigopostal": "3600-214"
+        "codigopostal": "3600-214",
+        "localidade": "CASTRO DAIRE"
     },
     "Cinfães": {
         "sitio": "cm-cinfaes.pt",
         "rua": "Largo Paços do Concelho",
-        "codigopostal": "4690-031"
+        "codigopostal": "4690-031",
+        "localidade": "CINFÃES"
     },
     "Lamego": {
         "sitio": "cm-lamego.pt",
         "rua": "Avenida Padre Alfredo Pinto Teixeira",
-        "codigopostal": "5100-150"
+        "codigopostal": "5100-150",
+        "localidade": "LAMEGO"
     },
     "Mangualde": {
         "sitio": "cmmangualde.pt",
         "rua": "Largo Dr. Couto",
-        "codigopostal": "3534-004"
+        "codigopostal": "3534-004",
+        "localidade": "MANGUALDE"
     },
     "Moimenta da Beira": {
         "sitio": "cm-moimenta.pt",
         "rua": "Largo do Tabolado",
-        "codigopostal": "3620-324"
+        "codigopostal": "3620-324",
+        "localidade": "MOIMENTA DA BEIRA"
     },
     "Mortágua": {
         "sitio": "cm-mortagua.pt",
         "rua": "Rua João Lopes de Morais",
-        "codigopostal": "3450-153"
+        "codigopostal": "3450-153",
+        "localidade": "MORTÁGUA"
     },
     "Nelas": {
         "sitio": "cm-nelas.pt",
         "rua": "Largo do Município",
-        "codigopostal": "3520-001"
+        "codigopostal": "3520-001",
+        "localidade": "NELAS"
     },
     "Oliveira de Frades": {
         "sitio": "cm-ofrades.com",
         "rua": "Largo Dr. Joaquim de Almeida",
-        "codigopostal": "3680-111"
+        "codigopostal": "3680-111",
+        "localidade": "OLIVEIRA DE FRADES"
     },
     "Penalva do Castelo": {
         "sitio": "cm-penalvadocastelo.pt",
         "rua": "Avenida Castendo, N.º 1",
-        "codigopostal": "3550-185"
+        "codigopostal": "3550-185",
+        "localidade": "PENALVA DO CASTELO"
     },
     "Penedono": {
         "sitio": "cm-penedono.pt",
         "rua": "Largo da Devesa",
-        "codigopostal": "3630-227"
+        "codigopostal": "3630-227",
+        "localidade": "PENEDONO"
     },
     "Resende": {
         "sitio": "cm-resende.pt",
         "rua": "Av. Rebelo Moniz",
-        "codigopostal": "4660-215"
+        "codigopostal": "4660-215",
+        "localidade": "RESENDE"
     },
     "Santa Comba Dão": {
         "sitio": "cm-santacombadao.pt",
         "rua": "Largo do Município, N.º 13",
-        "codigopostal": "3440-337"
+        "codigopostal": "3440-337",
+        "localidade": "SANTA COMBA DÃO"
     },
     "São João da Pesqueira": {
         "sitio": "sjpesqueira.pt",
         "rua": "Av.ª Marquês de Soveral, n.º 67",
-        "codigopostal": "5130-321"
+        "codigopostal": "5130-321",
+        "localidade": "S.JOÃO DA PESQUEIRA"
     },
     "São Pedro do Sul": {
         "sitio": "cm-spsul.pt",
         "rua": "Rua De Camões",
-        "codigopostal": "3660-436"
+        "codigopostal": "3660-436",
+        "localidade": "SÃO PEDRO DO SUL"
     },
     "Sátão": {
         "sitio": "cm-satao.pt",
         "rua": "Praça Paulo VI",
-        "codigopostal": "3560-154"
+        "codigopostal": "3560-154",
+        "localidade": "SÁTÃO"
     },
     "Sernancelhe": {
         "sitio": "cm-sernancelhe.pt",
         "rua": "Rua Dr. Oliveira Serrão",
-        "codigopostal": "3640-240"
+        "codigopostal": "3640-240",
+        "localidade": "SERNANCELHE"
     },
     "Tabuaço": {
         "sitio": "cm-tabuaco.pt",
         "rua": "Rua Dr. António José de Almeida",
-        "codigopostal": "5120-423"
+        "codigopostal": "5120-423",
+        "localidade": "TABUAÇO"
     },
     "Tarouca": {
         "sitio": "cm-tarouca.pt",
         "rua": "Av.ª Dr. Alexandre Taveira Cardoso",
-        "codigopostal": "3610-128"
+        "codigopostal": "3610-128",
+        "localidade": "Tarouca"
     },
     "Tondela": {
         "sitio": "cm-tondela.pt",
         "rua": "Largo da República, N.º 16",
-        "codigopostal": "3464-001"
+        "codigopostal": "3464-001",
+        "localidade": "TONDELA"
     },
     "Vila Nova de Paiva": {
         "sitio": "cm-vnpaiva.pt",
         "rua": "Praça D. Afonso Henriques, N.º 1",
-        "codigopostal": "3650-207"
+        "codigopostal": "3650-207",
+        "localidade": "VILA NOVA DE PAIVA"
     },
     "Viseu": {
         "sitio": "cm-viseu.pt",
         "rua": "Praça da República",
-        "codigopostal": "3514-501"
+        "codigopostal": "3514-501",
+        "localidade": "VISEU"
     },
     "Vouzela": {
         "sitio": "cm-vouzela.pt",
         "rua": "Alameda D. Duarte de Almeida",
-        "codigopostal": "3670-250"
+        "codigopostal": "3670-250",
+        "localidade": "VOUZELA"
     }
 }
