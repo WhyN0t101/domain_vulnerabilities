@@ -83,6 +83,8 @@ This Vue app communicates with a Flask API that performs the following tasks:
 git clone <repository-url>
 cd <repository-folder>
 
+# alter the ip in the .env.development file
+
 # Install dependencies
 npm install
 
