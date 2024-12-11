@@ -241,7 +241,7 @@ export default {
 
       try {
         // Actual API call to fetch domain details
-        const response = await this.$axios.get(`http://192.168.209.129:5000/check_domain/${this.$route.params.domain}`);
+        const response = await this.$axios.get(`${process.env.VUE_APP_API_BASE_URL}/check_domain/${this.$route.params.domain}`);
 
         if (response.status === 200) {
           this.domainDetails = response.data;  // Set the data if the request is successful
