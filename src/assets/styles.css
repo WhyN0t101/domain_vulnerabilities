@@ -28,11 +28,22 @@
     max-width: 24rem;
   }
 
+  /* Dark Mode Styles */
+  .dark .domain-card {
+    background-color: rgb(31 41 55); /* Dark mode background */
+    border: 1px solid rgb(55 65 81); /* Dark border */
+  }
+
   .domain-card:hover {
     --tw-scale-x: 1.05;
     --tw-scale-y: 1.05;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     background-color: rgb(229 231 235);
+  }
+
+  /* Dark mode hover effect */
+  .dark .domain-card:hover {
+    background-color: rgb(49 53 61); /* Dark mode hover background */
   }
 
   button {
@@ -52,8 +63,17 @@
     border: 0;
   }
 
+  /* Dark mode button */
+  .dark button {
+    background-color: rgb(16 185 129); /* Dark mode button color */
+  }
+
   button:hover {
     background-color: rgb(22 163 74);
+  }
+
+  .dark button:hover {
+    background-color: rgb(5 150 105); /* Dark mode button hover color */
   }
 }
 

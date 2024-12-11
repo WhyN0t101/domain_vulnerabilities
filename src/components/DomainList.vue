@@ -26,24 +26,13 @@
       </div>
 
       <!-- Domain Grid -->
-      <div v-if="filteredDomains && filteredDomains.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        <div v-for="domain in filteredDomains" :key="domain.domain">
+      <div v-if="paginatedDomains.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div v-for="domain in paginatedDomains" :key="domain.domain">
           <router-link :to="`/details/${domain.domain}`" class="block">
             <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
-              <!-- Domain Card Header -->
               <div class="bg-gradient-to-r from-blue-500 to-indigo-600 p-6">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center space-x-3">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                    </svg>
-                    <h3 class="text-lg font-semibold text-white">{{ domain.domain }}</h3>
-                  </div>
-                </div>
+                <h3 class="text-lg font-semibold text-white">{{ domain.domain }}</h3>
               </div>
-
-              <!-- Domain Card Body -->
               <div class="p-6 space-y-4">
                 <div class="flex items-start space-x-3">
                   <svg class="w-5 h-5 text-gray-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,22 +44,8 @@
                     <p class="text-sm text-gray-600">{{ domain.rua || 'N/A' }}</p>
                   </div>
                 </div>
-
-                <div class="flex items-center space-x-3">
-                  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <p class="text-sm text-gray-600">{{ domain.codigopostal || 'N/A' }}</p>
-                </div>
-
-                <!-- Action Button -->
-                <button class="w-full mt-6 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 
-                             text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 
-                             flex items-center justify-center space-x-2 group">
-                  <span>View Details</span>
-                  <svg class="w-5 h-5 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                  </svg>
+                <button class="w-full mt-6 bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 px-4 rounded-lg">
+                  View Details
                 </button>
               </div>
             </div>
@@ -78,6 +53,44 @@
         </div>
       </div>
 
+      <div class="flex justify-center mt-12 space-x-2" v-if="totalPages > 1">
+        <!-- Previous Button -->
+        <button
+          @click="goToPage(currentPage - 1)"
+          :disabled="currentPage === 1"
+          class="px-4 py-2 rounded-lg transition-all duration-200"
+          :class="currentPage === 1 
+            ? 'bg-gray-300 text-gray-500 cursor-not-allowed hover:bg-gray-400' 
+            : 'bg-blue-100 text-blue-700 hover:bg-blue-200 hover:text-blue-900'"
+        >
+          Previous
+        </button>
+
+        <!-- Page Buttons -->
+        <button
+          v-for="page in visiblePages"
+          :key="page"
+          @click="goToPage(page)"
+          class="px-4 py-2 rounded-lg transition-all duration-200"
+          :class="currentPage === page 
+            ? 'bg-blue-600 text-white hover:bg-blue-800' 
+            : 'bg-gray-200 text-gray-700 hover:bg-blue-300 hover:text-gray-900'"
+        >
+          {{ page }}
+        </button>
+
+        <!-- Next Button -->
+        <button
+          @click="goToPage(currentPage + 1)"
+          :disabled="currentPage === totalPages"
+          class="px-4 py-2 rounded-lg transition-all duration-200"
+          :class="currentPage === totalPages 
+            ? 'bg-gray-300 text-gray-500 cursor-not-allowed hover:bg-gray-400' 
+            : 'bg-blue-100 text-blue-700 hover:bg-blue-200 hover:text-blue-900'"
+        >
+          Next
+        </button>
+      </div>
       <!-- Empty State -->
       <div v-else class="text-center py-12">
         <p class="text-xl text-gray-600">No domains available to display</p>
@@ -87,9 +100,8 @@
   </div>
 </template>
 
-<script>
-// Script Section (keeping things as they are)
 
+<script>
 export default {
   name: 'DomainList',
   props: {
@@ -101,6 +113,8 @@ export default {
   data() {
     return {
       searchQuery: '', // Holds the search query input by the user
+      currentPage: 1, // Current page number
+      itemsPerPage: 20, // Number of items per page
     };
   },
   computed: {
@@ -109,9 +123,38 @@ export default {
         domain.domain.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
     },
+    paginatedDomains() {
+      const start = (this.currentPage - 1) * this.itemsPerPage;
+      const end = start + this.itemsPerPage;
+      return this.filteredDomains.slice(start, end);
+    },
+    totalPages() {
+      return Math.ceil(this.filteredDomains.length / this.itemsPerPage);
+    },
+    visiblePages() {
+      const totalVisible = 5; // Number of pages to show in the pagination bar
+      const half = Math.floor(totalVisible / 2);
+      let start = Math.max(this.currentPage - half, 1);
+      let end = Math.min(start + totalVisible - 1, this.totalPages);
+
+      // Adjust start if we're at the end
+      if (end - start + 1 < totalVisible) {
+        start = Math.max(end - totalVisible + 1, 1);
+      }
+
+      return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+    },
+  },
+  methods: {
+    goToPage(page) {
+      if (page >= 1 && page <= this.totalPages) {
+        this.currentPage = page;
+      }
+    },
   },
 };
 </script>
+
 
 <style scoped>
 /* Basic Animation */
