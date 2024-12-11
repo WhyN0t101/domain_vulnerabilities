@@ -8,9 +8,10 @@
         <div class="h-1.5 w-32 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mt-6"></div>
       </div>
 
-      <!-- Search Bar Section -->
-      <div class="max-w-2xl mx-auto mb-12">
-        <div class="relative">
+      <!-- Search Bar Section and Items per Page Dropdown -->
+      <div class="flex max-w-2xl mx-auto mb-12 space-x-6">
+        <!-- Search Bar -->
+        <div class="relative flex-1">
           <span class="absolute inset-y-0 left-0 pl-4 flex items-center">
             <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -22,6 +23,17 @@
             placeholder="Search domains..."
             class="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 outline-none bg-white/80 backdrop-blur-sm"
           />
+        </div>
+
+        <!-- Items per Page Dropdown -->
+        <div class="flex w-20">
+          <select
+            id="itemsPerPage"
+            v-model="itemsPerPage"
+            class="px-2 py-1 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 outline-none w-full"
+          >
+            <option v-for="option in options" :key="option" :value="option">{{ option }}</option>
+          </select>
         </div>
       </div>
 
@@ -115,6 +127,7 @@ export default {
       searchQuery: '', // Holds the search query input by the user
       currentPage: 1, // Current page number
       itemsPerPage: 20, // Number of items per page
+      options: [10, 20, 30, 50, 100], // Available options for items per page
     };
   },
   computed: {
