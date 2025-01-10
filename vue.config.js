@@ -1,6 +1,5 @@
-const { defineConfig } = require('@vue/cli-service')
 
-module.exports = defineConfig({
+module.exports = {
   css: {
     loaderOptions: {
       postcss: {
@@ -13,4 +12,4 @@ module.exports = defineConfig({
       }
     }
   }
-})
+};

@@ -8,6 +8,10 @@ import requests
 import hashlib
 import OpenSSL
 import datetime
+from concurrent.futures import ThreadPoolExecutor
+import asyncio
+import re
+import os
 
 app = Flask(__name__)
 app.config['CACHE_TYPE'] = 'SimpleCache'
@@ -15,15 +19,36 @@ app.config['CACHE_DEFAULT_TIMEOUT'] = 300
 cache = Cache(app)
 
 # Enable CORS for all routes
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
-# Utility function: DNSSEC and TLSA records
-def check_dnssec_tlsa(domain):
+
+# Thread pool executor for concurrency
+executor = ThreadPoolExecutor(max_workers=10)
+
+NVD_API_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
+NVD_API_KEY = "API"
+
+async def run_in_executor(func, *args):
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(executor, func, *args)
+
+def resolve_domain(domain):
+    if '.' not in domain:
+        # Append a default TLD
+        domain += '.pt'
+    return domain
+
+def is_valid_domain(domain):
+    domain_regex = r"^(?!-)[A-Za-z0-9-]{1,63}(?<!-)(\.[A-Za-z]{2,6})+$"
+    return re.match(domain_regex, domain)
+
+def check_dnssec_tlsa_with_recommendations(domain):
     resolver = dns.resolver.Resolver()
     result = {
         "dnssec_valid": False,
         "tlsa_records": []
     }
+    recommendations = []
     try:
         dnssec_query = resolver.resolve(domain, 'A', raise_on_no_answer=False)
         result["dnssec_valid"] = dnssec_query.response.flags & 0x20 != 0  # AD flag for DNSSEC validation
@@ -34,6 +59,13 @@ def check_dnssec_tlsa(domain):
             result["tlsa_records"] = []
     except Exception as e:
         result["error"] = str(e)
+
+    if not result.get("dnssec_valid"):
+        recommendations.append("DNSSEC is not enabled. Configure DNSSEC to improve domain security.")
+    if not result.get("tlsa_records"):
+        recommendations.append("No TLSA records found. Consider adding them for additional SSL validation.")
+
+    result["recommendations"] = recommendations
     return result
 
 def check_ssl_certificate(domain):
@@ -41,169 +73,143 @@ def check_ssl_certificate(domain):
         "certificate_valid": False,
         "certificate_issuer": None,
         "certificate_expiration": None,
+        "certificate_chain": [],
         "ssl_error": None
     }
     try:
-        # Get the certificate from the domain
         cert = ssl.get_server_certificate((domain, 443))
         x509 = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, cert)
 
-        # Validate the certificate expiration date
         expiration_date = datetime.datetime.strptime(x509.get_notAfter().decode('utf-8'), "%Y%m%d%H%M%SZ")
         result["certificate_expiration"] = expiration_date.strftime('%Y-%m-%d %H:%M:%S')
+        result["certificate_issuer"] = x509.get_issuer().CN if hasattr(x509.get_issuer(), 'CN') else str(x509.get_issuer())
+        result["certificate_chain"].append(x509.get_subject().CN)
 
         if expiration_date > datetime.datetime.utcnow():
             result["certificate_valid"] = True
-        
-        result["certificate_issuer"] = x509.get_issuer()
     except Exception as e:
         result["ssl_error"] = str(e)
-
     return result
 
-def check_https(domain):
-    result = {
-        "redirects_to_https": False,
-        "hsts_supported": False,
-        "ssl_versions_supported": [],
-        "weak_ssl_v3": False,
-        "ssl_certificate": {}
-    }
-    try:
-        # Check HTTPS redirection and HSTS
-        response = requests.get(f"http://{domain}", timeout=5, allow_redirects=True)
-        result["redirects_to_https"] = response.url.startswith("https://")
-        if "Strict-Transport-Security" in response.headers:
-            result["hsts_supported"] = True
-
-        # Check SSL/TLS versions with relaxed hostname checking
-        context = ssl.create_default_context()
-        context.check_hostname = False  # Skip hostname verification
-        for version in [ssl.PROTOCOL_TLSv1_2, ssl.PROTOCOL_TLSv1_3]:
-            try:
-                with socket.create_connection((domain, 443), timeout=5) as sock:
-                    with context.wrap_socket(sock, server_hostname=domain) as ssock:
-                        if version in ssock.version():
-                            result["ssl_versions_supported"].append(ssock.version())
-            except Exception:
-                continue
-
-        # Check for SSLv3 vulnerability (POODLE)
-        context = ssl.create_default_context()
-        context.options |= ssl.OP_NO_SSLv2 | ssl.OP_NO_SSLv3  # Disable SSLv2 and SSLv3
-        with socket.create_connection((domain, 443), timeout=5) as sock:
-            with context.wrap_socket(sock, server_hostname=domain) as ssock:
-                if ssock.version() == 'SSLv3':
-                    result["weak_ssl_v3"] = True
-
-        # SSL Certificate details
-        result["ssl_certificate"] = check_ssl_certificate(domain)
-    except requests.exceptions.SSLError as e:
-        result["error"] = f"SSL error: {e}"
-    except Exception as e:
-        result["error"] = str(e)
-    return result
-
-# Utility function: Email Security
-def check_email_security(domain):
-    result = {
-        "spf_record": None,
-        "dmarc_record": None,
-        "dkim_supported": False,
-        "starttls_supported": False,
-        "dane_tlsa": []
-    }
-    resolver = dns.resolver.Resolver()
-
-    try:
-        # SPF record
-        spf_query = resolver.resolve(domain, "TXT", raise_on_no_answer=False)
-        result["spf_record"] = next((rdata.to_text() for rdata in spf_query if "v=spf1" in rdata.to_text()), None)
-
-        # DMARC record
-        dmarc_query = resolver.resolve(f"_dmarc.{domain}", "TXT", raise_on_no_answer=False)
-        result["dmarc_record"] = next((rdata.to_text() for rdata in dmarc_query), None)
-
-        # STARTTLS support
-        mail_server_query = resolver.resolve(domain, "MX", raise_on_no_answer=False)
-        mail_server = sorted([(r.preference, r.exchange.to_text()) for r in mail_server_query])[0][1]
-        with socket.create_connection((mail_server, 25), timeout=5) as sock:
-            sock.recv(1024)
-            sock.send(b"EHLO test\r\n")
-            response = sock.recv(1024).decode()
-            result["starttls_supported"] = "STARTTLS" in response
-
-        # DANE (TLSA) records for email
-        dane_query = resolver.resolve(f"_25._tcp.{domain}", "TLSA", raise_on_no_answer=False)
-        result["dane_tlsa"] = [rdata.to_text() for rdata in dane_query]
-    except Exception as e:
-        result["error"] = str(e)
-    return result
-
-# Utility function to check HTTP Security Headers
-def check_http_security_headers(domain):
+def check_http_headers_with_recommendations(domain):
     result = {
         "content_security_policy": False,
         "x_content_type_options": False,
         "x_frame_options": False,
         "x_xss_protection": False,
-        "x_download_options": False,
-        "strict_transport_security": False,
+        "permissions_policy": False,
         "referrer_policy": False,
+        "security_score": 0
     }
-    
+    recommendations = []
     try:
-        # Send a request to the domain to check headers
-        response = requests.get(f"http://{domain}", timeout=5, allow_redirects=True)
-        
-        # Check if the headers exist
-        result["content_security_policy"] = 'Content-Security-Policy' in response.headers
-        result["x_content_type_options"] = 'X-Content-Type-Options' in response.headers
-        result["x_frame_options"] = 'X-Frame-Options' in response.headers
-        result["x_xss_protection"] = 'X-XSS-Protection' in response.headers
-        result["x_download_options"] = 'X-Download-Options' in response.headers
-        result["strict_transport_security"] = 'Strict-Transport-Security' in response.headers
-        result["referrer_policy"] = 'Referrer-Policy' in response.headers
-        
-    except requests.exceptions.RequestException as e:
-        result["error"] = f"HTTP request failed: {e}"
-    
+        try:
+            response = requests.get(f"http://{domain}", timeout=5, allow_redirects=True)
+        except requests.exceptions.ConnectionError:
+            # Retry with 'www.' prefix
+            response = requests.get(f"http://www.{domain}", timeout=5, allow_redirects=True)
+
+        headers = response.headers
+        result["content_security_policy"] = 'Content-Security-Policy' in headers
+        result["x_content_type_options"] = 'X-Content-Type-Options' in headers
+        result["x_frame_options"] = 'X-Frame-Options' in headers
+        result["x_xss_protection"] = 'X-XSS-Protection' in headers
+        result["permissions_policy"] = 'Permissions-Policy' in headers
+        result["referrer_policy"] = 'Referrer-Policy' in headers
+
+        # Calculate a simple score
+        result["security_score"] = sum(1 for key, value in result.items() if value is True)
+    except Exception as e:
+        result["error"] = str(e)
+
+    if not result["content_security_policy"]:
+        recommendations.append("Add a Content-Security-Policy header to mitigate cross-site scripting attacks.")
+    if not result["x_content_type_options"]:
+        recommendations.append("Add X-Content-Type-Options to prevent MIME-sniffing vulnerabilities.")
+    if not result["x_frame_options"]:
+        recommendations.append("Add X-Frame-Options to protect against clickjacking attacks.")
+    if not result["x_xss_protection"]:
+        recommendations.append("Add X-XSS-Protection to improve cross-site scripting (XSS) protection.")
+    if not result["permissions_policy"]:
+        recommendations.append("Add a Permissions-Policy header to restrict browser features.")
+    if not result["referrer_policy"]:
+        recommendations.append("Add a Referrer-Policy header to control referrer information sent with requests.")
+
+    result["recommendations"] = recommendations
     return result
 
-# Function to create an ETag from response data
-def generate_etag(data):
-    return hashlib.md5(str(data).encode('utf-8')).hexdigest()
-
-
-# API Endpoint
-@app.route('/check_domain/<domain>', methods=['GET'])
-@cache.cached(timeout=300)  # Cache the response for 5 minutes (300 seconds)
-def check_domain(domain):
+def check_vulnerabilities_with_recommendations(domain):
     try:
-        dnssec_tlsa_info = check_dnssec_tlsa(domain)
-        https_info = check_https(domain)
-        email_info = check_email_security(domain)
-        http_security_headers = check_http_security_headers(domain)
+        # Example of a potential product detection (replace with actual detection logic)
+        detected_software = "apache"  # Replace with server software for the domain
+
+        # Query NVD API
+        headers = {
+            "User-Agent": "Domain-Vulnerability-Checker/1.0"
+        }
+        params = {
+            "keywordSearch": detected_software,
+            "resultsPerPage": 5,
+            "startIndex": 0,
+            "apiKey": NVD_API_KEY
+        }
+        response = requests.get(NVD_API_URL, headers=headers, params=params, timeout=10)
+        response.raise_for_status()  # Raise exception for HTTP errors
+
+        cve_data = response.json()
+        if "vulnerabilities" in cve_data:
+            cve_results = [
+                {
+                    "id": item["cve"]["id"],
+                    "description": item["cve"]["descriptions"][0]["value"],
+                    "severity": item.get("cve", {}).get("metrics", {}).get("cvssMetricV31", [{}])[0].get("cvssData", {}).get("baseSeverity", "Unknown")
+                }
+                for item in cve_data["vulnerabilities"]
+            ]
+            return {"cve_results": cve_results}
+        else:
+            return {"error": "No CVE data found for the given query."}
+    except requests.exceptions.HTTPError as e:
+        if response.status_code == 403:
+            return {"error": "Access forbidden. Ensure the API key is correct and rate limits are not exceeded."}
+        return {"error": f"HTTP error occurred: {e}"}
+    except requests.exceptions.RequestException as e:
+        return {"error": f"Failed to fetch CVE data: {e}"}
+
+
+
+@app.route('/check_domain/<domain>', methods=['GET'])
+@cache.cached(timeout=300)
+async def check_domain(domain):
+    domain = resolve_domain(domain)
+    if not is_valid_domain(domain):
+        return jsonify({"error": "Invalid domain name. Please use a fully qualified domain name."}), 400
+
+    try:
+        dnssec_tlsa = await run_in_executor(check_dnssec_tlsa_with_recommendations, domain)
+        ssl_info = await run_in_executor(check_ssl_certificate, domain)
+        http_headers = await run_in_executor(check_http_headers_with_recommendations, domain)
+        vulnerabilities = await run_in_executor(check_vulnerabilities_with_recommendations, domain)
 
         response = {
             "domain": domain,
-            "dnssec_tlsa": dnssec_tlsa_info,
-            "https": https_info,
-            "email_security": email_info,
-            "http_security_headers": http_security_headers
+            "dnssec_tlsa": dnssec_tlsa,
+            "ssl_info": ssl_info,
+            "http_headers": http_headers,
+            "vulnerabilities": vulnerabilities,
+            "recommendations": {
+                "dnssec": dnssec_tlsa.get("recommendations", []),
+                "http_headers": http_headers.get("recommendations", []),
+                "vulnerabilities": vulnerabilities.get("cve_results", [])
+            }
         }
 
-        # Create a response object
         res = make_response(jsonify(response))
-
-        # Set Cache-Control headers (public and cache for 1 hour)
-        res.headers['Cache-Control'] = 'public, max-age=3600'  # Cache for 1 hour
-        res.headers['ETag'] = generate_etag(response)  # ETag for cache validation
-
+        res.headers['Cache-Control'] = 'public, max-age=3600'
+        res.headers['ETag'] = hashlib.md5(str(response).encode('utf-8')).hexdigest()
         return res
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
