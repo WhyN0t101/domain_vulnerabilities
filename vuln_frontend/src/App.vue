@@ -1,8 +1,7 @@
 <template>
-  <div id="app">
-    <!-- Pass filtered domains to the DomainList component -->
+  
     <router-view :domains="filteredDomains" />
-  </div>
+
 </template>
 
 <script>
