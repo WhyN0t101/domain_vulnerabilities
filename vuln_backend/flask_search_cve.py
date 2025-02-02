@@ -18,6 +18,8 @@ import asyncio
 import validators
 from builtwith import builtwith
 from bs4 import BeautifulSoup
+import certifi
+
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from requests.structures import CaseInsensitiveDict
@@ -39,6 +41,7 @@ limiter = Limiter(
 # Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+ssl_context = ssl.create_default_context(cafile=certifi.where())
 
 # Thread pool executor for concurrency
 executor = ThreadPoolExecutor(max_workers=10)
@@ -49,10 +52,27 @@ async def run_in_executor(func, *args):
     loop = asyncio.get_event_loop()
     return await loop.run_in_executor(executor, func, *args)
 
+
 def resolve_domain(domain):
-    if '.' not in domain:
-        domain += '.pt'
-    return domain
+    try:
+        resolver = dns.resolver.Resolver()
+        resolver.resolve(domain, 'A')
+        return domain  # If it resolves, return it
+    except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer, dns.resolver.LifetimeTimeout):
+        try:
+            # Try with www.
+            www_domain = f"www.{domain}"
+            resolver.resolve(www_domain, 'A')
+            return www_domain
+        except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer, dns.resolver.LifetimeTimeout):
+            return domain  # If both fail, return the original
+
+# Ensure `NoAnswer` is handled correctly
+if not hasattr(dns.resolver, 'NoAnswer'):
+    class NoAnswer(Exception):
+        pass
+    dns.resolver.NoAnswer = NoAnswer
+
 
 def is_valid_domain(domain):
     return validators.domain(domain)
@@ -188,6 +208,79 @@ def check_dnssec_tlsa_with_recommendations(domain):
     result["recommendations"] = recommendations
     return result
 
+def fetch_dns_records(domain):
+    """Fetch and clean up DNS records for better frontend display."""
+    resolver = dns.resolver.Resolver()
+    result = {
+        "MX": "Not Found",
+        "CNAME": "Not Found",
+        "TXT": "Not Found",
+        "SPF": "Not Found",
+        "DKIM": "Not Found",
+        "DMARC": "Not Found"
+    }
+
+    try:
+        mx_records = [rdata.to_text() for rdata in resolver.resolve(domain, 'MX')]
+        result['MX'] = ", ".join(mx_records)
+    except:
+        result['MX'] = "Not Found"
+
+    try:
+        cname_records = [rdata.to_text() for rdata in resolver.resolve(domain, 'CNAME')]
+        result['CNAME'] = ", ".join(cname_records)
+    except:
+        result['CNAME'] = "Not Found"
+
+    try:
+        txt_records = [rdata.to_text() for rdata in resolver.resolve(domain, 'TXT')]
+        result['TXT'] = ", ".join(txt_records)
+    except:
+        result['TXT'] = "Not Found"
+
+    try:
+        spf_records = [rdata.to_text() for rdata in resolver.resolve(domain, 'SPF')]
+        result['SPF'] = ", ".join(spf_records)
+    except:
+        result['SPF'] = "Not Found"
+
+    try:
+        dkim_records = [rdata.to_text() for rdata in resolver.resolve("_domainkey." + domain, 'TXT')]
+        result['DKIM'] = ", ".join(dkim_records)
+    except:
+        result['DKIM'] = "Not Found"
+
+    try:
+        dmarc_records = [rdata.to_text() for rdata in resolver.resolve("_dmarc." + domain, 'TXT')]
+        result['DMARC'] = ", ".join(dmarc_records)
+    except:
+        result['DMARC'] = "Not Found"
+
+    return result
+
+
+def check_tls_protocols(domain):
+    """Check supported TLS versions (detects weak protocols)"""
+    supported_protocols = []
+    protocols = {
+        "TLSv1": ssl.PROTOCOL_TLSv1 if hasattr(ssl, "PROTOCOL_TLSv1") else None,
+        "TLSv1.1": ssl.PROTOCOL_TLSv1_1 if hasattr(ssl, "PROTOCOL_TLSv1_1") else None,
+        "TLSv1.2": ssl.PROTOCOL_TLSv1_2 if hasattr(ssl, "PROTOCOL_TLSv1_2") else None,
+        "TLSv1.3": getattr(ssl, "PROTOCOL_TLSv1_3", None),  # Avoid AttributeError
+    }
+    
+    for version, protocol in protocols.items():
+        if protocol:  # Only test available protocols
+            try:
+                context = ssl.SSLContext(protocol)
+                with socket.create_connection((domain, 443), timeout=5) as sock:
+                    with context.wrap_socket(sock, server_hostname=domain):
+                        supported_protocols.append(version)
+            except ssl.SSLError:
+                pass
+
+    return supported_protocols
+
 def check_ssl_certificate(domain):
     result = {
         "certificate_valid": False,
@@ -272,12 +365,25 @@ async def check_domain(domain):
         ssl_info = await run_in_executor(check_ssl_certificate, domain)
         http_headers = await run_in_executor(check_http_headers_with_recommendations, domain)
         tech_cves = await run_in_executor(get_cves_for_domain, domain)
+        dns_records = await run_in_executor(fetch_dns_records, domain)
+        tls_protocols = await run_in_executor(check_tls_protocols, domain)
 
-        # Consolidate recommendations
+        # Consolidate recommendations from various sources
         all_recommendations = list(set(
             dnssec_tlsa.get("recommendations", []) +
-            http_headers.get("recommendations", [])
+            http_headers.get("recommendations", []) +
+            [f"Ensure the domain {domain} uses the latest supported TLS version."] +
+            ([f"Update your SSL certificate. Expiry date: {ssl_info.get('certificate_expiration')}"]
+             if not ssl_info["certificate_valid"] else [])
         ))
+
+        # Add recommendations for DNS records
+        if dns_records.get('SPF') == "No SPF records found":
+            all_recommendations.append("Configure an SPF record to specify allowed email senders.")
+        if dns_records.get('DKIM') == "No DKIM records found":
+            all_recommendations.append("Add a DKIM record to sign your emails and prevent spoofing.")
+        if dns_records.get('DMARC') == "No DMARC records found":
+            all_recommendations.append("Set up a DMARC record to monitor and enforce email policies.")
 
         # Separate vulnerabilities
         vulnerabilities = tech_cves.get("cves", {})
@@ -287,6 +393,8 @@ async def check_domain(domain):
             "domain": domain,
             "dnssec_tlsa": dnssec_tlsa,
             "ssl_info": ssl_info,
+            "dns_records": dns_records,
+            "tls_protocols": tls_protocols,
             "http_headers": http_headers,
             "recommendations": {
                 "all": all_recommendations

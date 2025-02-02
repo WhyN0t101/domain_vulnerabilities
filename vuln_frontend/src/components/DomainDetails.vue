@@ -1,4 +1,5 @@
 <template>
+  
   <div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8 px-4 antialiased">
     <div v-if="domainDetails" class="max-w-6xl mx-auto space-y-8">
       <!-- Domain Header with Enhanced Layout -->
@@ -77,7 +78,7 @@
             </div>
           </div>
         </section>
-
+        
         <!-- SSL Information Section -->
         <section class="security-card">
           <div class="card-header">
@@ -87,6 +88,7 @@
               </svg>
             </div>
             <h3>SSL Information</h3>
+
           </div>
 
           <div class="card-content">
@@ -102,9 +104,34 @@
               <p class="font-semibold mb-2">Expiration Date:</p>
               <p>{{ domainDetails.ssl_info.certificate_expiration || 'Unknown' }}</p>
             </div>
+            <div class="mt-4">
+              <p class="font-semibold mb-2">TLS Protocol:</p>
+              <p>{{ domainDetails?.tls_protocols?.length ? domainDetails.tls_protocols.join(', ') : 'Unknown' }}</p>
+            </div>
           </div>
         </section>
       </div>
+
+    <!-- DNS RECORDs Section -->
+      <section class="security-card">
+        <div class="card-header">
+          <div class="icon-bg bg-blue-100">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <h3>DNS Records</h3>
+        </div>
+
+        <div class="card-content">
+          <div v-for="(value, key) in domainDetails.dns_records" :key="key" class="p-3 bg-gray-50 rounded-lg mb-2">
+            <span class="font-semibold">{{ key.toUpperCase() }}: </span>
+            <span class="text-gray-700">{{ value.length ? value : 'Not Configured' }}</span>
+          </div>
+        </div>
+     </section>
+
           <!-- HTTP Security Headers Section -->
     <section class="security-card mt-8">
       <div class="card-header">
