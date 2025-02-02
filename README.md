@@ -74,29 +74,5 @@ This Vue app communicates with a Flask API that performs the following tasks:
 2. The API performs checks using DNSPython, socket/SSL, and Requests libraries.
 3. Caching is applied to serve recent results quickly and reduce redundant computations.
 
----
-## Installation and Setup
 
-### Frontend & Backend
-```bash
-# Clone this repository
-git clone <repository-url>
-cd <repository-folder>
-
-# alter the ip in the .env.development file
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run serve
-
-# Clone the Flask backend repository
-git clone <backend-repository-url>
-
-# Set up a Python virtual environment and install the required dependencies
-pip install -r requirements.txt
-
-# Run the Flask server
-python app.py
 
