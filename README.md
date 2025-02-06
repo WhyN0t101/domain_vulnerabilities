@@ -1,7 +1,7 @@
-# Municipios Vue Application
+# Domain Vulnerabilities
 
 ## Description
-The **Municipios Vue Application** is a modern Vue.js-based web interface designed to analyze and display detailed information about municipal domains. It integrates seamlessly with a Flask backend API to fetch and present comprehensive domain-related data, such as:
+The **Domain Vulnerabilities** is a modern Vue.js-based web interface designed to analyze and display detailed information about municipal domains. It integrates seamlessly with a Flask backend API to fetch and present comprehensive domain-related data, such as:
 
 - DNSSEC validity and TLSA records.
 - HTTPS configuration and SSL/TLS support.
